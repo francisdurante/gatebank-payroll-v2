@@ -1,0 +1,10 @@
+INSERT INTO Branch(BranchName) VALUES ('Head Office');
+INSERT INTO Branch(BranchName) VALUES ('Balagtas');
+INSERT INTO Branch(BranchName) VALUES ('Bustos');
+INSERT INTO Branch(BranchName) VALUES ('Pandi');
+INSERT INTO Branch(BranchName) VALUES ('Pulilan');
+INSERT INTO Branch(BranchName) VALUES ('SJDM');
+INSERT INTO Branch(BranchName) VALUES ('Malolos');
+INSERT INTO Branch(BranchName) VALUES ('San Ildefonso');
+INSERT INTO Branch(BranchName) VALUES ('San Rafael');
+INSERT INTO Branch(BranchName) VALUES ('Norzagaray');

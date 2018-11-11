@@ -92,6 +92,7 @@
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbDeductions.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbLoanDeductions.SuspendLayout();
@@ -99,6 +100,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.gbEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbDeductions
@@ -596,6 +598,7 @@
             this.gbEmployee.TabIndex = 28;
             this.gbEmployee.TabStop = false;
             this.gbEmployee.Text = "EMPLOYEE INFORMATION";
+            this.gbEmployee.Enter += new System.EventHandler(this.gbEmployee_Enter);
             // 
             // lblBasicSalaryContent
             // 
@@ -687,7 +690,7 @@
             // 
             // cnEmployeeName
             // 
-            this.cnEmployeeName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cnEmployeeName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cnEmployeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cnEmployeeName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cnEmployeeName.FormattingEnabled = true;
@@ -695,6 +698,8 @@
             this.cnEmployeeName.Name = "cnEmployeeName";
             this.cnEmployeeName.Size = new System.Drawing.Size(263, 23);
             this.cnEmployeeName.TabIndex = 0;
+            this.cnEmployeeName.SelectedIndexChanged += new System.EventHandler(this.cnEmployeeName_SelectedIndexChanged);
+            this.cnEmployeeName.Leave += new System.EventHandler(this.cnEmployeeName_Leave);
             // 
             // lblEmployeeName
             // 
@@ -727,6 +732,17 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::GatebankPayroll.Properties.Resources.Picture11;
+            this.pictureBox1.Location = new System.Drawing.Point(744, 645);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmGeneratePayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -734,6 +750,7 @@
             this.BackgroundImage = global::GatebankPayroll.Properties.Resources.thumb16;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 707);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.gbEmployee);
@@ -757,6 +774,7 @@
             this.groupBox4.PerformLayout();
             this.gbEmployee.ResumeLayout(false);
             this.gbEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -827,5 +845,6 @@
         private System.Windows.Forms.Label lblpayrollDate;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -37,8 +37,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMain = new System.Windows.Forms.MenuStrip();
             this.payrollMS = new System.Windows.Forms.ToolStripMenuItem();
-            this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generatePayrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payrollMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
@@ -50,9 +52,9 @@
             this.ssFullname,
             this.ssAccessLevel,
             this.ssDateTime});
-            this.statusStrip1.Location = new System.Drawing.Point(198, 517);
+            this.statusStrip1.Location = new System.Drawing.Point(234, 517);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(510, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(474, 24);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -109,10 +111,11 @@
             this.msMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.payrollMS,
+            this.payrollMaintenanceToolStripMenuItem,
             this.lOGOUTToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(198, 541);
+            this.msMain.Size = new System.Drawing.Size(234, 541);
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
             // 
@@ -126,20 +129,9 @@
             this.payrollMS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.payrollMS.Name = "payrollMS";
             this.payrollMS.Padding = new System.Windows.Forms.Padding(10, 20, 10, 20);
-            this.payrollMS.Size = new System.Drawing.Size(185, 117);
+            this.payrollMS.Size = new System.Drawing.Size(221, 117);
             this.payrollMS.Text = "Generate Payroll";
             this.payrollMS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // lOGOUTToolStripMenuItem
-            // 
-            this.lOGOUTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lOGOUTToolStripMenuItem.Image = global::GatebankPayroll.Properties.Resources.if_icons_exit2_1564506;
-            this.lOGOUTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(185, 77);
-            this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
-            this.lOGOUTToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
             // 
             // generatePayrollToolStripMenuItem
             // 
@@ -148,6 +140,38 @@
             this.generatePayrollToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.generatePayrollToolStripMenuItem.Text = "Generate Payroll";
             this.generatePayrollToolStripMenuItem.Click += new System.EventHandler(this.generatePayrollToolStripMenuItem_Click);
+            // 
+            // payrollMaintenanceToolStripMenuItem
+            // 
+            this.payrollMaintenanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addEmployeeToolStripMenuItem});
+            this.payrollMaintenanceToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payrollMaintenanceToolStripMenuItem.Image = global::GatebankPayroll.Properties.Resources.if_maintenance_repair_service_Gear_3853928;
+            this.payrollMaintenanceToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.payrollMaintenanceToolStripMenuItem.Name = "payrollMaintenanceToolStripMenuItem";
+            this.payrollMaintenanceToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 20, 10, 20);
+            this.payrollMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(221, 117);
+            this.payrollMaintenanceToolStripMenuItem.Text = "Payroll Maintenance";
+            this.payrollMaintenanceToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // lOGOUTToolStripMenuItem
+            // 
+            this.lOGOUTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lOGOUTToolStripMenuItem.Image = global::GatebankPayroll.Properties.Resources.if_icons_exit2_1564506;
+            this.lOGOUTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(221, 77);
+            this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
+            this.lOGOUTToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
+            // 
+            // addEmployeeToolStripMenuItem
+            // 
+            this.addEmployeeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.addEmployeeToolStripMenuItem.Text = "Add Employee";
+            this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -189,5 +213,7 @@
         private System.Windows.Forms.ToolStripMenuItem payrollMS;
         private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generatePayrollToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payrollMaintenanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
     }
 }

@@ -72,5 +72,20 @@ namespace GatebankPayroll
                 MessageBox.Show("Generate Payroll is Already Opened", "Log In", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = Application.OpenForms["frmAddEmployee"];
+            if (f == null)
+            {
+                frmAddEmployee fgp = new frmAddEmployee();
+                fgp.MdiParent = this;
+                fgp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Add Employee is Already Opened", "Log In", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

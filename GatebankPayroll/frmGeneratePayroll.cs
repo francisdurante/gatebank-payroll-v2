@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,18 @@ namespace GatebankPayroll
 {
     public partial class frmGeneratePayroll : Form
     {
+        private const int WM_NCHITTEST = 0x84;
+        private const int HTCLIENT = 0x1;
+        private const int HTCAPTION = 0x2;
+
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
+
+            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
+                message.Result = (IntPtr)HTCAPTION;
+        }
+        ArrayList employeeNames;
         public frmGeneratePayroll()
         {
             InitializeComponent();
@@ -50,6 +63,8 @@ namespace GatebankPayroll
         private void frmGeneratePayroll_Load(object sender, EventArgs e)
         {
             textBoxOnloadValue();
+            getEmployeeName();
+            cnEmployeeName.SelectedIndex = 0;
         }
 
         public void textBoxOnloadValue()
@@ -76,6 +91,58 @@ namespace GatebankPayroll
             txtOther1.Text = "0.00";
             txtOther2.Text = "0.00";
             txtOther3.Text = "0.00";
+        }
+        public void getEmployeeName()
+        {
+            cnEmployeeName.Items.Clear();
+            cnEmployeeName.Items.Add("---Select Employee---");
+            employeeNames = Global.getEmployeeName(1);
+            for(int x = 0; x < employeeNames.Count; x++)
+            {
+                cnEmployeeName.Items.Add(employeeNames[x]);
+            }
+        }
+
+        private void gbEmployee_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cnEmployeeName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private bool employeeExisting()
+        {
+            bool exist = false;
+            if (cnEmployeeName.Text == "")
+            {
+                MessageBox.Show("Please Select Branch", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cnEmployeeName.Focus();
+            }
+            for (int x = 0; x < employeeNames.Count; x++)
+            {
+                if (cnEmployeeName.Text != employeeNames[x].ToString())
+                {
+                    exist = false;
+                }
+                else
+                {
+                    exist = true;
+                    break;
+                }
+            }
+
+            if (!exist)
+            {
+                cnEmployeeName.SelectedIndex = 0;
+            }
+            return exist;
+        }
+
+        private void cnEmployeeName_Leave(object sender, EventArgs e)
+        {
+            employeeExisting();
         }
     }
 }

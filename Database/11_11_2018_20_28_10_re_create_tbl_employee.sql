@@ -1,0 +1,12 @@
+CREATE TABLE Employee(
+	ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	EmployeeName VARCHAR(MAX) NOT NULL,
+	Position INT NOT NULL,
+	Branch INT NOT NULL,
+	BasicSalary float NOT NULL,
+	DateHired DATE NOT NULL,
+	EmployeeStatus INT NOT NULL DEFAULT 1,
+
+	FOREIGN KEY (Position) REFERENCES Employee_Position(ID),
+	FOREIGN KEY (Branch) REFERENCES Branch(ID)
+)
