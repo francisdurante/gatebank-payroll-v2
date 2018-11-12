@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gbDeductions = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbComanyDeduction = new System.Windows.Forms.GroupBox();
             this.txtOther = new System.Windows.Forms.TextBox();
             this.lblOthers = new System.Windows.Forms.Label();
             this.txtArHCard = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.pagIbigLoan = new System.Windows.Forms.Label();
             this.txtSSSLoanD = new System.Windows.Forms.TextBox();
             this.lblSSSLoan = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbGDeduction = new System.Windows.Forms.GroupBox();
             this.txtWTaxD = new System.Windows.Forms.TextBox();
             this.lblWTax = new System.Windows.Forms.Label();
             this.txtPHD = new System.Windows.Forms.TextBox();
@@ -58,14 +58,13 @@
             this.lblPagIbig = new System.Windows.Forms.Label();
             this.txtSSSD = new System.Windows.Forms.TextBox();
             this.lblSSS = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbAdditional = new System.Windows.Forms.GroupBox();
             this.txtOther3Txt = new System.Windows.Forms.TextBox();
             this.txtOther3 = new System.Windows.Forms.TextBox();
             this.txtOther2Txt = new System.Windows.Forms.TextBox();
             this.txtOther2 = new System.Windows.Forms.TextBox();
             this.txtOther1Txt = new System.Windows.Forms.TextBox();
             this.txtOther1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.txtBonus = new System.Windows.Forms.TextBox();
             this.lblBonus = new System.Windows.Forms.Label();
             this.txtIncentives = new System.Windows.Forms.TextBox();
@@ -93,22 +92,26 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblBranchContent = new System.Windows.Forms.Label();
+            this.lblBranch = new System.Windows.Forms.Label();
+            this.gbOthers = new System.Windows.Forms.GroupBox();
             this.gbDeductions.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbComanyDeduction.SuspendLayout();
             this.gbLoanDeductions.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbGDeduction.SuspendLayout();
+            this.gbAdditional.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.gbEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbOthers.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDeductions
             // 
             this.gbDeductions.BackColor = System.Drawing.Color.Transparent;
-            this.gbDeductions.Controls.Add(this.groupBox2);
+            this.gbDeductions.Controls.Add(this.gbComanyDeduction);
             this.gbDeductions.Controls.Add(this.gbLoanDeductions);
-            this.gbDeductions.Controls.Add(this.groupBox1);
+            this.gbDeductions.Controls.Add(this.gbGDeduction);
             this.gbDeductions.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDeductions.Location = new System.Drawing.Point(14, 137);
             this.gbDeductions.Name = "gbDeductions";
@@ -117,31 +120,32 @@
             this.gbDeductions.TabStop = false;
             this.gbDeductions.Text = "DEDUCTIONS";
             // 
-            // groupBox2
+            // gbComanyDeduction
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.txtOther);
-            this.groupBox2.Controls.Add(this.lblOthers);
-            this.groupBox2.Controls.Add(this.txtArHCard);
-            this.groupBox2.Controls.Add(this.lblARCard);
-            this.groupBox2.Controls.Add(this.txtSMCard);
-            this.groupBox2.Controls.Add(this.lblSMcard);
-            this.groupBox2.Controls.Add(this.txtProviFund);
-            this.groupBox2.Controls.Add(this.lblProvident);
-            this.groupBox2.Controls.Add(this.txtLate);
-            this.groupBox2.Controls.Add(this.lblLate);
-            this.groupBox2.Controls.Add(this.txtAbsent);
-            this.groupBox2.Controls.Add(this.lblAbsent);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 302);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(339, 239);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Company Deductions";
+            this.gbComanyDeduction.BackColor = System.Drawing.Color.Transparent;
+            this.gbComanyDeduction.Controls.Add(this.txtOther);
+            this.gbComanyDeduction.Controls.Add(this.lblOthers);
+            this.gbComanyDeduction.Controls.Add(this.txtArHCard);
+            this.gbComanyDeduction.Controls.Add(this.lblARCard);
+            this.gbComanyDeduction.Controls.Add(this.txtSMCard);
+            this.gbComanyDeduction.Controls.Add(this.lblSMcard);
+            this.gbComanyDeduction.Controls.Add(this.txtProviFund);
+            this.gbComanyDeduction.Controls.Add(this.lblProvident);
+            this.gbComanyDeduction.Controls.Add(this.txtLate);
+            this.gbComanyDeduction.Controls.Add(this.lblLate);
+            this.gbComanyDeduction.Controls.Add(this.txtAbsent);
+            this.gbComanyDeduction.Controls.Add(this.lblAbsent);
+            this.gbComanyDeduction.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbComanyDeduction.Location = new System.Drawing.Point(6, 302);
+            this.gbComanyDeduction.Name = "gbComanyDeduction";
+            this.gbComanyDeduction.Size = new System.Drawing.Size(339, 239);
+            this.gbComanyDeduction.TabIndex = 7;
+            this.gbComanyDeduction.TabStop = false;
+            this.gbComanyDeduction.Text = "Company Deductions";
             // 
             // txtOther
             // 
+            this.txtOther.HideSelection = false;
             this.txtOther.Location = new System.Drawing.Point(145, 167);
             this.txtOther.Name = "txtOther";
             this.txtOther.Size = new System.Drawing.Size(188, 23);
@@ -159,6 +163,7 @@
             // 
             // txtArHCard
             // 
+            this.txtArHCard.HideSelection = false;
             this.txtArHCard.Location = new System.Drawing.Point(145, 138);
             this.txtArHCard.Name = "txtArHCard";
             this.txtArHCard.Size = new System.Drawing.Size(188, 23);
@@ -176,6 +181,7 @@
             // 
             // txtSMCard
             // 
+            this.txtSMCard.HideSelection = false;
             this.txtSMCard.Location = new System.Drawing.Point(145, 109);
             this.txtSMCard.Name = "txtSMCard";
             this.txtSMCard.Size = new System.Drawing.Size(188, 23);
@@ -193,6 +199,7 @@
             // 
             // txtProviFund
             // 
+            this.txtProviFund.HideSelection = false;
             this.txtProviFund.Location = new System.Drawing.Point(145, 80);
             this.txtProviFund.Name = "txtProviFund";
             this.txtProviFund.Size = new System.Drawing.Size(188, 23);
@@ -210,6 +217,7 @@
             // 
             // txtLate
             // 
+            this.txtLate.HideSelection = false;
             this.txtLate.Location = new System.Drawing.Point(145, 51);
             this.txtLate.Name = "txtLate";
             this.txtLate.Size = new System.Drawing.Size(188, 23);
@@ -227,6 +235,7 @@
             // 
             // txtAbsent
             // 
+            this.txtAbsent.HideSelection = false;
             this.txtAbsent.Location = new System.Drawing.Point(145, 22);
             this.txtAbsent.Name = "txtAbsent";
             this.txtAbsent.Size = new System.Drawing.Size(188, 23);
@@ -261,6 +270,7 @@
             // 
             // txtProviLoan
             // 
+            this.txtProviLoan.HideSelection = false;
             this.txtProviLoan.Location = new System.Drawing.Point(145, 80);
             this.txtProviLoan.Name = "txtProviLoan";
             this.txtProviLoan.Size = new System.Drawing.Size(188, 23);
@@ -278,6 +288,7 @@
             // 
             // txtPagIbigLoan
             // 
+            this.txtPagIbigLoan.HideSelection = false;
             this.txtPagIbigLoan.Location = new System.Drawing.Point(145, 51);
             this.txtPagIbigLoan.Name = "txtPagIbigLoan";
             this.txtPagIbigLoan.Size = new System.Drawing.Size(188, 23);
@@ -295,6 +306,7 @@
             // 
             // txtSSSLoanD
             // 
+            this.txtSSSLoanD.HideSelection = false;
             this.txtSSSLoanD.Location = new System.Drawing.Point(145, 22);
             this.txtSSSLoanD.Name = "txtSSSLoanD";
             this.txtSSSLoanD.Size = new System.Drawing.Size(188, 23);
@@ -310,27 +322,28 @@
             this.lblSSSLoan.TabIndex = 0;
             this.lblSSSLoan.Text = "SSS LOAN : ";
             // 
-            // groupBox1
+            // gbGDeduction
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtWTaxD);
-            this.groupBox1.Controls.Add(this.lblWTax);
-            this.groupBox1.Controls.Add(this.txtPHD);
-            this.groupBox1.Controls.Add(this.lblPH);
-            this.groupBox1.Controls.Add(this.txtPagIbigD);
-            this.groupBox1.Controls.Add(this.lblPagIbig);
-            this.groupBox1.Controls.Add(this.txtSSSD);
-            this.groupBox1.Controls.Add(this.lblSSS);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 22);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 144);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Government Deductions";
+            this.gbGDeduction.BackColor = System.Drawing.Color.Transparent;
+            this.gbGDeduction.Controls.Add(this.txtWTaxD);
+            this.gbGDeduction.Controls.Add(this.lblWTax);
+            this.gbGDeduction.Controls.Add(this.txtPHD);
+            this.gbGDeduction.Controls.Add(this.lblPH);
+            this.gbGDeduction.Controls.Add(this.txtPagIbigD);
+            this.gbGDeduction.Controls.Add(this.lblPagIbig);
+            this.gbGDeduction.Controls.Add(this.txtSSSD);
+            this.gbGDeduction.Controls.Add(this.lblSSS);
+            this.gbGDeduction.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbGDeduction.Location = new System.Drawing.Point(6, 22);
+            this.gbGDeduction.Name = "gbGDeduction";
+            this.gbGDeduction.Size = new System.Drawing.Size(339, 144);
+            this.gbGDeduction.TabIndex = 1;
+            this.gbGDeduction.TabStop = false;
+            this.gbGDeduction.Text = "Government Deductions";
             // 
             // txtWTaxD
             // 
+            this.txtWTaxD.HideSelection = false;
             this.txtWTaxD.Location = new System.Drawing.Point(145, 109);
             this.txtWTaxD.Name = "txtWTaxD";
             this.txtWTaxD.Size = new System.Drawing.Size(188, 23);
@@ -349,6 +362,7 @@
             // 
             // txtPHD
             // 
+            this.txtPHD.HideSelection = false;
             this.txtPHD.Location = new System.Drawing.Point(145, 80);
             this.txtPHD.Name = "txtPHD";
             this.txtPHD.Size = new System.Drawing.Size(188, 23);
@@ -366,6 +380,7 @@
             // 
             // txtPagIbigD
             // 
+            this.txtPagIbigD.HideSelection = false;
             this.txtPagIbigD.Location = new System.Drawing.Point(145, 51);
             this.txtPagIbigD.Name = "txtPagIbigD";
             this.txtPagIbigD.Size = new System.Drawing.Size(188, 23);
@@ -383,6 +398,8 @@
             // 
             // txtSSSD
             // 
+            this.txtSSSD.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSSSD.HideSelection = false;
             this.txtSSSD.Location = new System.Drawing.Point(145, 22);
             this.txtSSSD.Name = "txtSSSD";
             this.txtSSSD.Size = new System.Drawing.Size(188, 23);
@@ -398,42 +415,38 @@
             this.lblSSS.TabIndex = 0;
             this.lblSSS.Text = "SSS : ";
             // 
-            // groupBox3
+            // gbAdditional
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.txtOther3Txt);
-            this.groupBox3.Controls.Add(this.txtOther3);
-            this.groupBox3.Controls.Add(this.txtOther2Txt);
-            this.groupBox3.Controls.Add(this.txtOther2);
-            this.groupBox3.Controls.Add(this.txtOther1Txt);
-            this.groupBox3.Controls.Add(this.txtOther1);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.txtBonus);
-            this.groupBox3.Controls.Add(this.lblBonus);
-            this.groupBox3.Controls.Add(this.txtIncentives);
-            this.groupBox3.Controls.Add(this.lblIncentives);
-            this.groupBox3.Controls.Add(this.txtAllowance);
-            this.groupBox3.Controls.Add(this.lblAllowance);
-            this.groupBox3.Controls.Add(this.txtOT);
-            this.groupBox3.Controls.Add(this.lblOT);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(375, 137);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(355, 296);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ADDITIONALS";
+            this.gbAdditional.BackColor = System.Drawing.Color.Transparent;
+            this.gbAdditional.Controls.Add(this.gbOthers);
+            this.gbAdditional.Controls.Add(this.txtBonus);
+            this.gbAdditional.Controls.Add(this.lblBonus);
+            this.gbAdditional.Controls.Add(this.txtIncentives);
+            this.gbAdditional.Controls.Add(this.lblIncentives);
+            this.gbAdditional.Controls.Add(this.txtAllowance);
+            this.gbAdditional.Controls.Add(this.lblAllowance);
+            this.gbAdditional.Controls.Add(this.txtOT);
+            this.gbAdditional.Controls.Add(this.lblOT);
+            this.gbAdditional.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAdditional.Location = new System.Drawing.Point(375, 137);
+            this.gbAdditional.Name = "gbAdditional";
+            this.gbAdditional.Size = new System.Drawing.Size(355, 296);
+            this.gbAdditional.TabIndex = 8;
+            this.gbAdditional.TabStop = false;
+            this.gbAdditional.Text = "ADDITIONALS";
             // 
             // txtOther3Txt
             // 
-            this.txtOther3Txt.Location = new System.Drawing.Point(17, 230);
+            this.txtOther3Txt.HideSelection = false;
+            this.txtOther3Txt.Location = new System.Drawing.Point(11, 92);
             this.txtOther3Txt.Name = "txtOther3Txt";
             this.txtOther3Txt.Size = new System.Drawing.Size(99, 23);
             this.txtOther3Txt.TabIndex = 23;
             // 
             // txtOther3
             // 
-            this.txtOther3.Location = new System.Drawing.Point(146, 230);
+            this.txtOther3.HideSelection = false;
+            this.txtOther3.Location = new System.Drawing.Point(140, 92);
             this.txtOther3.Name = "txtOther3";
             this.txtOther3.Size = new System.Drawing.Size(188, 23);
             this.txtOther3.TabIndex = 24;
@@ -441,14 +454,16 @@
             // 
             // txtOther2Txt
             // 
-            this.txtOther2Txt.Location = new System.Drawing.Point(17, 201);
+            this.txtOther2Txt.HideSelection = false;
+            this.txtOther2Txt.Location = new System.Drawing.Point(11, 63);
             this.txtOther2Txt.Name = "txtOther2Txt";
             this.txtOther2Txt.Size = new System.Drawing.Size(99, 23);
             this.txtOther2Txt.TabIndex = 21;
             // 
             // txtOther2
             // 
-            this.txtOther2.Location = new System.Drawing.Point(146, 201);
+            this.txtOther2.HideSelection = false;
+            this.txtOther2.Location = new System.Drawing.Point(140, 63);
             this.txtOther2.Name = "txtOther2";
             this.txtOther2.Size = new System.Drawing.Size(188, 23);
             this.txtOther2.TabIndex = 22;
@@ -456,30 +471,24 @@
             // 
             // txtOther1Txt
             // 
-            this.txtOther1Txt.Location = new System.Drawing.Point(17, 172);
+            this.txtOther1Txt.HideSelection = false;
+            this.txtOther1Txt.Location = new System.Drawing.Point(11, 34);
             this.txtOther1Txt.Name = "txtOther1Txt";
             this.txtOther1Txt.Size = new System.Drawing.Size(99, 23);
             this.txtOther1Txt.TabIndex = 19;
             // 
             // txtOther1
             // 
-            this.txtOther1.Location = new System.Drawing.Point(146, 172);
+            this.txtOther1.HideSelection = false;
+            this.txtOther1.Location = new System.Drawing.Point(140, 34);
             this.txtOther1.Name = "txtOther1";
             this.txtOther1.Size = new System.Drawing.Size(188, 23);
             this.txtOther1.TabIndex = 20;
             this.txtOther1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(122, 151);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(69, 15);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "OTHERS : ";
-            // 
             // txtBonus
             // 
+            this.txtBonus.HideSelection = false;
             this.txtBonus.Location = new System.Drawing.Point(146, 109);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.Size = new System.Drawing.Size(188, 23);
@@ -497,6 +506,7 @@
             // 
             // txtIncentives
             // 
+            this.txtIncentives.HideSelection = false;
             this.txtIncentives.Location = new System.Drawing.Point(146, 80);
             this.txtIncentives.Name = "txtIncentives";
             this.txtIncentives.Size = new System.Drawing.Size(188, 23);
@@ -514,6 +524,7 @@
             // 
             // txtAllowance
             // 
+            this.txtAllowance.HideSelection = false;
             this.txtAllowance.Location = new System.Drawing.Point(146, 51);
             this.txtAllowance.Name = "txtAllowance";
             this.txtAllowance.Size = new System.Drawing.Size(188, 23);
@@ -531,6 +542,7 @@
             // 
             // txtOT
             // 
+            this.txtOT.HideSelection = false;
             this.txtOT.Location = new System.Drawing.Point(146, 22);
             this.txtOT.Name = "txtOT";
             this.txtOT.Size = new System.Drawing.Size(188, 23);
@@ -561,6 +573,7 @@
             // 
             // txtRemarks
             // 
+            this.txtRemarks.HideSelection = false;
             this.txtRemarks.Location = new System.Drawing.Point(20, 46);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
@@ -579,6 +592,8 @@
             // gbEmployee
             // 
             this.gbEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.gbEmployee.Controls.Add(this.lblBranchContent);
+            this.gbEmployee.Controls.Add(this.lblBranch);
             this.gbEmployee.Controls.Add(this.lblBasicSalaryContent);
             this.gbEmployee.Controls.Add(this.lblbasicSalary);
             this.gbEmployee.Controls.Add(this.lblPositionContent);
@@ -598,7 +613,6 @@
             this.gbEmployee.TabIndex = 28;
             this.gbEmployee.TabStop = false;
             this.gbEmployee.Text = "EMPLOYEE INFORMATION";
-            this.gbEmployee.Enter += new System.EventHandler(this.gbEmployee_Enter);
             // 
             // lblBasicSalaryContent
             // 
@@ -736,12 +750,45 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GatebankPayroll.Properties.Resources.Picture11;
-            this.pictureBox1.Location = new System.Drawing.Point(744, 645);
+            this.pictureBox1.Location = new System.Drawing.Point(736, 645);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblBranchContent
+            // 
+            this.lblBranchContent.AutoSize = true;
+            this.lblBranchContent.Location = new System.Drawing.Point(552, 76);
+            this.lblBranchContent.Name = "lblBranchContent";
+            this.lblBranchContent.Size = new System.Drawing.Size(49, 15);
+            this.lblBranchContent.TabIndex = 25;
+            this.lblBranchContent.Text = "######";
+            // 
+            // lblBranch
+            // 
+            this.lblBranch.AutoSize = true;
+            this.lblBranch.Location = new System.Drawing.Point(449, 76);
+            this.lblBranch.Name = "lblBranch";
+            this.lblBranch.Size = new System.Drawing.Size(65, 15);
+            this.lblBranch.TabIndex = 24;
+            this.lblBranch.Text = "BRANCH : ";
+            // 
+            // gbOthers
+            // 
+            this.gbOthers.Controls.Add(this.txtOther1);
+            this.gbOthers.Controls.Add(this.txtOther3Txt);
+            this.gbOthers.Controls.Add(this.txtOther3);
+            this.gbOthers.Controls.Add(this.txtOther1Txt);
+            this.gbOthers.Controls.Add(this.txtOther2Txt);
+            this.gbOthers.Controls.Add(this.txtOther2);
+            this.gbOthers.Location = new System.Drawing.Point(6, 138);
+            this.gbOthers.Name = "gbOthers";
+            this.gbOthers.Size = new System.Drawing.Size(343, 152);
+            this.gbOthers.TabIndex = 25;
+            this.gbOthers.TabStop = false;
+            this.gbOthers.Text = "OTHERS";
             // 
             // frmGeneratePayroll
             // 
@@ -755,26 +802,28 @@
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.gbEmployee);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gbAdditional);
             this.Controls.Add(this.gbDeductions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGeneratePayroll";
             this.Text = "frmGeneratePayroll";
             this.Load += new System.EventHandler(this.frmGeneratePayroll_Load);
             this.gbDeductions.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbComanyDeduction.ResumeLayout(false);
+            this.gbComanyDeduction.PerformLayout();
             this.gbLoanDeductions.ResumeLayout(false);
             this.gbLoanDeductions.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbGDeduction.ResumeLayout(false);
+            this.gbGDeduction.PerformLayout();
+            this.gbAdditional.ResumeLayout(false);
+            this.gbAdditional.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.gbEmployee.ResumeLayout(false);
             this.gbEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbOthers.ResumeLayout(false);
+            this.gbOthers.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -782,7 +831,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbDeductions;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbComanyDeduction;
         private System.Windows.Forms.TextBox txtArHCard;
         private System.Windows.Forms.Label lblARCard;
         private System.Windows.Forms.TextBox txtSMCard;
@@ -800,7 +849,7 @@
         private System.Windows.Forms.Label pagIbigLoan;
         private System.Windows.Forms.TextBox txtSSSLoanD;
         private System.Windows.Forms.Label lblSSSLoan;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbGDeduction;
         private System.Windows.Forms.TextBox txtWTaxD;
         private System.Windows.Forms.Label lblWTax;
         private System.Windows.Forms.TextBox txtPHD;
@@ -809,14 +858,13 @@
         private System.Windows.Forms.Label lblPagIbig;
         private System.Windows.Forms.TextBox txtSSSD;
         private System.Windows.Forms.Label lblSSS;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbAdditional;
         private System.Windows.Forms.TextBox txtOther3Txt;
         private System.Windows.Forms.TextBox txtOther3;
         private System.Windows.Forms.TextBox txtOther2Txt;
         private System.Windows.Forms.TextBox txtOther2;
         private System.Windows.Forms.TextBox txtOther1Txt;
         private System.Windows.Forms.TextBox txtOther1;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtBonus;
         private System.Windows.Forms.Label lblBonus;
         private System.Windows.Forms.TextBox txtIncentives;
@@ -846,5 +894,8 @@
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblBranchContent;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.GroupBox gbOthers;
     }
 }

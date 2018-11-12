@@ -24,7 +24,7 @@ namespace GatebankPayroll
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
-        ArrayList employeeNames;
+        Dictionary<string,string> employeeNames;
         public frmGeneratePayroll()
         {
             InitializeComponent();
@@ -42,7 +42,18 @@ namespace GatebankPayroll
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            all_onLeave();
+            if(forGeneratePayroll.forGeneratePayrollDAO.saveGeneratedpayroll(txtSSSD.Text, txtPagIbigD.Text, txtPHD.Text, txtWTaxD.Text, txtSSSLoanD.Text, txtPagIbigLoan.Text,
+                txtProviLoan.Text, txtAbsent.Text, txtLate.Text, txtProviFund.Text, txtSMCard.Text, txtArHCard.Text, txtOther.Text,
+                txtOT.Text, txtAllowance.Text, txtIncentives.Text, txtBonus.Text, txtOther1Txt.Text, txtOther1.Text, txtOther2Txt.Text, txtOther2.Text, txtOther3Txt.Text, txtOther3.Text,
+                txtRemarks.Text, cnEmployeeName.Text, dtpFrom.Text, dtpTo.Text))
+            {
+                MessageBox.Show("Payroll Saved", "Gearate Payroll", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Payroll Error to Saved", "Gearate Payroll", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void all_keypress(object sender, KeyPressEventArgs e)
@@ -62,9 +73,9 @@ namespace GatebankPayroll
 
         private void frmGeneratePayroll_Load(object sender, EventArgs e)
         {
+            cnEmployeeName.Text = "---Select Employee---";
             textBoxOnloadValue();
             getEmployeeName();
-            cnEmployeeName.SelectedIndex = 0;
         }
 
         public void textBoxOnloadValue()
@@ -99,7 +110,7 @@ namespace GatebankPayroll
             employeeNames = Global.getEmployeeName(1);
             for(int x = 0; x < employeeNames.Count; x++)
             {
-                cnEmployeeName.Items.Add(employeeNames[x]);
+                cnEmployeeName.Items.Add(employeeNames["name"+x]);
             }
         }
 
@@ -110,7 +121,15 @@ namespace GatebankPayroll
 
         private void cnEmployeeName_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cnEmployeeName.SelectedIndex != 0)
+            {
+                for (int x = 0; x < employeeNames.Count; x++)
+                {
+                    lblBasicSalaryContent.Text = employeeNames[cnEmployeeName.Text + "salary"];
+                    lblPositionContent.Text = employeeNames[cnEmployeeName.Text + "position"];
+                    lblBranchContent.Text = employeeNames[cnEmployeeName.Text + "branch"];
+                }
+            }
         }
         private bool employeeExisting()
         {
@@ -122,7 +141,7 @@ namespace GatebankPayroll
             }
             for (int x = 0; x < employeeNames.Count; x++)
             {
-                if (cnEmployeeName.Text != employeeNames[x].ToString())
+                if (cnEmployeeName.Text != employeeNames["name"+x])
                 {
                     exist = false;
                 }
@@ -135,7 +154,7 @@ namespace GatebankPayroll
 
             if (!exist)
             {
-                cnEmployeeName.SelectedIndex = 0;
+                cnEmployeeName.Text = "---Select Employee---";
             }
             return exist;
         }
@@ -143,6 +162,51 @@ namespace GatebankPayroll
         private void cnEmployeeName_Leave(object sender, EventArgs e)
         {
             employeeExisting();
+        }
+        private void all_onEnter(object sender, EventArgs e)
+        {
+
+        }
+        private void all_onLeave()
+        {
+            var gd = this.gbGDeduction.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox  t in gd)
+            {
+                if(t.Text == "")
+                {
+                    t.Text = "0.00";
+                }
+            }
+
+            var ld = this.gbLoanDeductions.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox t in ld)
+            {
+                if (t.Text == "")
+                {
+                    t.Text = "0.00";
+                }
+            }
+
+            var cd = this.gbComanyDeduction.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox t in cd)
+            {
+                if (t.Text == "")
+                {
+                    t.Text = "0.00";
+                }
+            }
+
+            var add = this.gbAdditional.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox t in add)
+            {
+                if (t.Text == "")
+                {
+                    t.Text = "0.00";
+                }
+            }
+            if (txtOther1.Text == "") { txtOther1.Text = "0.00"; }
+            if (txtOther2.Text == "") { txtOther2.Text = "0.00"; }
+            if (txtOther3.Text == "") { txtOther3.Text = "0.00"; }
         }
     }
 }

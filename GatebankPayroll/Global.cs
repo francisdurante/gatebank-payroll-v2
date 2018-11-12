@@ -77,10 +77,10 @@ namespace GatebankPayroll
             return response;
         }
 
-        public static ArrayList getEmployeeName(int status)
+        public static Dictionary<string,string> getEmployeeName(int status)
         {
             int rownCount = 0;
-            ArrayList response = new ArrayList();
+            Dictionary<string,string> response = new Dictionary<string,string>();
             Connection cn = new Connection();
             try
             {
@@ -91,20 +91,25 @@ namespace GatebankPayroll
                 SqlDataReader getEmployeeReader = getEmployee.ExecuteReader();
                 if (getEmployeeReader.HasRows)
                 {
+                    int x = 0;
                     while (getEmployeeReader.Read())
                     {
-                        response.Add(getEmployeeReader.GetValue(1).ToString());
+                        response.Add("name" + x,getEmployeeReader.GetValue(1).ToString());
+                        response.Add(getEmployeeReader.GetValue(1).ToString()+"salary", getEmployeeReader.GetValue(4).ToString());
+                        response.Add(getEmployeeReader.GetValue(1).ToString()+"position", getEmployeeReader.GetValue(8).ToString());
+                        response.Add(getEmployeeReader.GetValue(1).ToString()+"branch", getEmployeeReader.GetValue(11).ToString());
+                        x++;
                     }
                 }
                 else
                 {
-                    response.Add("");
+                    response.Add("","");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                response.Add("");
+                response.Add("","");
                 cn.connect().Close();
             }
             cn.connect().Close();
