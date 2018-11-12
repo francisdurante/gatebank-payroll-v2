@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GatebankPayroll
@@ -73,9 +67,11 @@ namespace GatebankPayroll
 
         private void frmGeneratePayroll_Load(object sender, EventArgs e)
         {
+            dateTimePickerSetEnable(false);
+            formDetailsSetEnable(false);
             cnEmployeeName.Text = "---Select Employee---";
             textBoxOnloadValue();
-            getEmployeeName();
+            getEmployeDetails();
         }
 
         public void textBoxOnloadValue()
@@ -103,7 +99,7 @@ namespace GatebankPayroll
             txtOther2.Text = "0.00";
             txtOther3.Text = "0.00";
         }
-        public void getEmployeeName()
+        public void getEmployeDetails()
         {
             cnEmployeeName.Items.Clear();
             cnEmployeeName.Items.Add("---Select Employee---");
@@ -112,11 +108,6 @@ namespace GatebankPayroll
             {
                 cnEmployeeName.Items.Add(employeeNames["name"+x]);
             }
-        }
-
-        private void gbEmployee_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void cnEmployeeName_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,32 +120,46 @@ namespace GatebankPayroll
                     lblPositionContent.Text = employeeNames[cnEmployeeName.Text + "position"];
                     lblBranchContent.Text = employeeNames[cnEmployeeName.Text + "branch"];
                 }
+                textBoxOnloadValue();
             }
+            else
+            {
+                formDetailsSetEnable(false);
+                dateTimePickerSetEnable(false);
+            }
+
         }
         private bool employeeExisting()
         {
             bool exist = false;
-            if (cnEmployeeName.Text == "")
+            if (cnEmployeeName.Text == "---Select Employee---")
             {
-                MessageBox.Show("Please Select Branch", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cnEmployeeName.Focus();
+                formDetailsSetEnable(false);
             }
-            for (int x = 0; x < employeeNames.Count; x++)
+            else
             {
-                if (cnEmployeeName.Text != employeeNames["name"+x])
+                string value;
+                for (int x = 0; x < employeeNames.Count; x++)
                 {
-                    exist = false;
+                    employeeNames.TryGetValue("name" + x, out value);
+                    if (cnEmployeeName.Text != value)
+                    {
+                        exist = false;
+                    }
+                    else
+                    {
+                        exist = true;
+                        dateTimePickerSetEnable(true);
+                        break;
+                    }
                 }
-                else
-                {
-                    exist = true;
-                    break;
-                }
-            }
 
-            if (!exist)
-            {
-                cnEmployeeName.Text = "---Select Employee---";
+                if (!exist)
+                {
+                    formDetailsSetEnable(false);
+                    cnEmployeeName.Text = "---Select Employee---";
+                }
             }
             return exist;
         }
@@ -162,10 +167,6 @@ namespace GatebankPayroll
         private void cnEmployeeName_Leave(object sender, EventArgs e)
         {
             employeeExisting();
-        }
-        private void all_onEnter(object sender, EventArgs e)
-        {
-
         }
         private void all_onLeave()
         {
@@ -207,6 +208,47 @@ namespace GatebankPayroll
             if (txtOther1.Text == "") { txtOther1.Text = "0.00"; }
             if (txtOther2.Text == "") { txtOther2.Text = "0.00"; }
             if (txtOther3.Text == "") { txtOther3.Text = "0.00"; }
+        }
+
+        private void formDetailsSetEnable(bool args)
+        {
+            gbAdditional.Enabled = args;
+            gbDeductions.Enabled = args;
+            gbGDeduction.Enabled = args;
+            gbOthers.Enabled = args;
+            gbLoanDeductions.Enabled = args;
+            gbRemarks.Enabled = args;
+            btnGenerate.Enabled = args;
+        }
+        private void dateTimePickerSetEnable(bool args)
+        {
+            dtpFrom.Enabled = args;
+            dtpTo.Enabled = args;
+        }
+
+        private void dtpTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (!forGeneratePayroll.forGeneratePayrollDAO.payrollExstingByDate(cnEmployeeName.Text, dtpFrom.Text, dtpTo.Text))
+                {
+                    MessageBox.Show("Employee Already Have on Selected Date", "Generate Payroll", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    formDetailsSetEnable(false);
+                }
+                else
+                {
+                    formDetailsSetEnable(true);
+                    SendKeys.Send("{TAB}");
+                }
+            }
+        }
+
+        private void cnEmployeeName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

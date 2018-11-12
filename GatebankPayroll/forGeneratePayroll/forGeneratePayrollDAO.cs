@@ -50,7 +50,6 @@ namespace GatebankPayroll.forGeneratePayroll
                 toSavePayroll.Parameters.AddWithValue("@dateTo", Convert.ToDateTime(dateTo));
 
                 int sqlReturn = toSavePayroll.ExecuteNonQuery();
-                MessageBox.Show(sqlReturn+"");
                 if (sqlReturn == -1)
                     response = true;
                 else
@@ -60,6 +59,38 @@ namespace GatebankPayroll.forGeneratePayroll
             {
                 response = false;
                 MessageBox.Show(ex.Message);
+            }
+            cn.connect().Close();
+            return response;
+        }
+
+        public static bool payrollExstingByDate(string employeeName, string dateFrom, string dateTo)
+        {
+            bool response = false;
+            Connection cn = new Connection();
+            try
+            {
+                SqlCommand toCheckExstingPayroll = new SqlCommand("dbo.spCheckPayrollDate", cn.connect());
+                toCheckExstingPayroll.CommandType = System.Data.CommandType.StoredProcedure;
+                toCheckExstingPayroll.Parameters.AddWithValue("@employeeName", employeeName);
+                toCheckExstingPayroll.Parameters.AddWithValue("@dateFrom", dateFrom);
+                toCheckExstingPayroll.Parameters.AddWithValue("@dateTo", dateTo);
+                SqlDataReader toCheckExstingPayrollReader = toCheckExstingPayroll.ExecuteReader();
+                if (toCheckExstingPayrollReader.HasRows)
+                {
+                    while (toCheckExstingPayrollReader.Read())
+                    {
+                        if(toCheckExstingPayrollReader.GetInt32(0) == 0)
+                        {
+                            response = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                response = false;
+                MessageBox.Show(ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             cn.connect().Close();
             return response;

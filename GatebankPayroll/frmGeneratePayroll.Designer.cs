@@ -59,12 +59,13 @@
             this.txtSSSD = new System.Windows.Forms.TextBox();
             this.lblSSS = new System.Windows.Forms.Label();
             this.gbAdditional = new System.Windows.Forms.GroupBox();
+            this.gbOthers = new System.Windows.Forms.GroupBox();
+            this.txtOther1 = new System.Windows.Forms.TextBox();
             this.txtOther3Txt = new System.Windows.Forms.TextBox();
             this.txtOther3 = new System.Windows.Forms.TextBox();
+            this.txtOther1Txt = new System.Windows.Forms.TextBox();
             this.txtOther2Txt = new System.Windows.Forms.TextBox();
             this.txtOther2 = new System.Windows.Forms.TextBox();
-            this.txtOther1Txt = new System.Windows.Forms.TextBox();
-            this.txtOther1 = new System.Windows.Forms.TextBox();
             this.txtBonus = new System.Windows.Forms.TextBox();
             this.lblBonus = new System.Windows.Forms.Label();
             this.txtIncentives = new System.Windows.Forms.TextBox();
@@ -73,10 +74,12 @@
             this.lblAllowance = new System.Windows.Forms.Label();
             this.txtOT = new System.Windows.Forms.TextBox();
             this.lblOT = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbRemarks = new System.Windows.Forms.GroupBox();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.lblRemarks = new System.Windows.Forms.Label();
             this.gbEmployee = new System.Windows.Forms.GroupBox();
+            this.lblBranchContent = new System.Windows.Forms.Label();
+            this.lblBranch = new System.Windows.Forms.Label();
             this.lblBasicSalaryContent = new System.Windows.Forms.Label();
             this.lblbasicSalary = new System.Windows.Forms.Label();
             this.lblPositionContent = new System.Windows.Forms.Label();
@@ -92,18 +95,15 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblBranchContent = new System.Windows.Forms.Label();
-            this.lblBranch = new System.Windows.Forms.Label();
-            this.gbOthers = new System.Windows.Forms.GroupBox();
             this.gbDeductions.SuspendLayout();
             this.gbComanyDeduction.SuspendLayout();
             this.gbLoanDeductions.SuspendLayout();
             this.gbGDeduction.SuspendLayout();
             this.gbAdditional.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbOthers.SuspendLayout();
+            this.gbRemarks.SuspendLayout();
             this.gbEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.gbOthers.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDeductions
@@ -149,7 +149,7 @@
             this.txtOther.Location = new System.Drawing.Point(145, 167);
             this.txtOther.Name = "txtOther";
             this.txtOther.Size = new System.Drawing.Size(188, 23);
-            this.txtOther.TabIndex = 14;
+            this.txtOther.TabIndex = 15;
             this.txtOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblOthers
@@ -167,7 +167,7 @@
             this.txtArHCard.Location = new System.Drawing.Point(145, 138);
             this.txtArHCard.Name = "txtArHCard";
             this.txtArHCard.Size = new System.Drawing.Size(188, 23);
-            this.txtArHCard.TabIndex = 13;
+            this.txtArHCard.TabIndex = 14;
             this.txtArHCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblARCard
@@ -185,7 +185,7 @@
             this.txtSMCard.Location = new System.Drawing.Point(145, 109);
             this.txtSMCard.Name = "txtSMCard";
             this.txtSMCard.Size = new System.Drawing.Size(188, 23);
-            this.txtSMCard.TabIndex = 12;
+            this.txtSMCard.TabIndex = 13;
             this.txtSMCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblSMcard
@@ -203,7 +203,7 @@
             this.txtProviFund.Location = new System.Drawing.Point(145, 80);
             this.txtProviFund.Name = "txtProviFund";
             this.txtProviFund.Size = new System.Drawing.Size(188, 23);
-            this.txtProviFund.TabIndex = 11;
+            this.txtProviFund.TabIndex = 12;
             this.txtProviFund.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblProvident
@@ -221,7 +221,7 @@
             this.txtLate.Location = new System.Drawing.Point(145, 51);
             this.txtLate.Name = "txtLate";
             this.txtLate.Size = new System.Drawing.Size(188, 23);
-            this.txtLate.TabIndex = 9;
+            this.txtLate.TabIndex = 11;
             this.txtLate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblLate
@@ -239,7 +239,7 @@
             this.txtAbsent.Location = new System.Drawing.Point(145, 22);
             this.txtAbsent.Name = "txtAbsent";
             this.txtAbsent.Size = new System.Drawing.Size(188, 23);
-            this.txtAbsent.TabIndex = 8;
+            this.txtAbsent.TabIndex = 10;
             this.txtAbsent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblAbsent
@@ -274,7 +274,7 @@
             this.txtProviLoan.Location = new System.Drawing.Point(145, 80);
             this.txtProviLoan.Name = "txtProviLoan";
             this.txtProviLoan.Size = new System.Drawing.Size(188, 23);
-            this.txtProviLoan.TabIndex = 7;
+            this.txtProviLoan.TabIndex = 9;
             this.txtProviLoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblProviLoan
@@ -292,7 +292,7 @@
             this.txtPagIbigLoan.Location = new System.Drawing.Point(145, 51);
             this.txtPagIbigLoan.Name = "txtPagIbigLoan";
             this.txtPagIbigLoan.Size = new System.Drawing.Size(188, 23);
-            this.txtPagIbigLoan.TabIndex = 6;
+            this.txtPagIbigLoan.TabIndex = 8;
             this.txtPagIbigLoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // pagIbigLoan
@@ -310,7 +310,7 @@
             this.txtSSSLoanD.Location = new System.Drawing.Point(145, 22);
             this.txtSSSLoanD.Name = "txtSSSLoanD";
             this.txtSSSLoanD.Size = new System.Drawing.Size(188, 23);
-            this.txtSSSLoanD.TabIndex = 5;
+            this.txtSSSLoanD.TabIndex = 7;
             this.txtSSSLoanD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblSSSLoan
@@ -347,7 +347,7 @@
             this.txtWTaxD.Location = new System.Drawing.Point(145, 109);
             this.txtWTaxD.Name = "txtWTaxD";
             this.txtWTaxD.Size = new System.Drawing.Size(188, 23);
-            this.txtWTaxD.TabIndex = 4;
+            this.txtWTaxD.TabIndex = 6;
             this.txtWTaxD.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             this.txtWTaxD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
@@ -366,7 +366,7 @@
             this.txtPHD.Location = new System.Drawing.Point(145, 80);
             this.txtPHD.Name = "txtPHD";
             this.txtPHD.Size = new System.Drawing.Size(188, 23);
-            this.txtPHD.TabIndex = 3;
+            this.txtPHD.TabIndex = 5;
             this.txtPHD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblPH
@@ -384,7 +384,7 @@
             this.txtPagIbigD.Location = new System.Drawing.Point(145, 51);
             this.txtPagIbigD.Name = "txtPagIbigD";
             this.txtPagIbigD.Size = new System.Drawing.Size(188, 23);
-            this.txtPagIbigD.TabIndex = 2;
+            this.txtPagIbigD.TabIndex = 4;
             this.txtPagIbigD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblPagIbig
@@ -403,7 +403,7 @@
             this.txtSSSD.Location = new System.Drawing.Point(145, 22);
             this.txtSSSD.Name = "txtSSSD";
             this.txtSSSD.Size = new System.Drawing.Size(188, 23);
-            this.txtSSSD.TabIndex = 1;
+            this.txtSSSD.TabIndex = 3;
             this.txtSSSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblSSS
@@ -435,47 +435,20 @@
             this.gbAdditional.TabStop = false;
             this.gbAdditional.Text = "ADDITIONALS";
             // 
-            // txtOther3Txt
+            // gbOthers
             // 
-            this.txtOther3Txt.HideSelection = false;
-            this.txtOther3Txt.Location = new System.Drawing.Point(11, 92);
-            this.txtOther3Txt.Name = "txtOther3Txt";
-            this.txtOther3Txt.Size = new System.Drawing.Size(99, 23);
-            this.txtOther3Txt.TabIndex = 23;
-            // 
-            // txtOther3
-            // 
-            this.txtOther3.HideSelection = false;
-            this.txtOther3.Location = new System.Drawing.Point(140, 92);
-            this.txtOther3.Name = "txtOther3";
-            this.txtOther3.Size = new System.Drawing.Size(188, 23);
-            this.txtOther3.TabIndex = 24;
-            this.txtOther3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
-            // 
-            // txtOther2Txt
-            // 
-            this.txtOther2Txt.HideSelection = false;
-            this.txtOther2Txt.Location = new System.Drawing.Point(11, 63);
-            this.txtOther2Txt.Name = "txtOther2Txt";
-            this.txtOther2Txt.Size = new System.Drawing.Size(99, 23);
-            this.txtOther2Txt.TabIndex = 21;
-            // 
-            // txtOther2
-            // 
-            this.txtOther2.HideSelection = false;
-            this.txtOther2.Location = new System.Drawing.Point(140, 63);
-            this.txtOther2.Name = "txtOther2";
-            this.txtOther2.Size = new System.Drawing.Size(188, 23);
-            this.txtOther2.TabIndex = 22;
-            this.txtOther2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
-            // 
-            // txtOther1Txt
-            // 
-            this.txtOther1Txt.HideSelection = false;
-            this.txtOther1Txt.Location = new System.Drawing.Point(11, 34);
-            this.txtOther1Txt.Name = "txtOther1Txt";
-            this.txtOther1Txt.Size = new System.Drawing.Size(99, 23);
-            this.txtOther1Txt.TabIndex = 19;
+            this.gbOthers.Controls.Add(this.txtOther1);
+            this.gbOthers.Controls.Add(this.txtOther3Txt);
+            this.gbOthers.Controls.Add(this.txtOther3);
+            this.gbOthers.Controls.Add(this.txtOther1Txt);
+            this.gbOthers.Controls.Add(this.txtOther2Txt);
+            this.gbOthers.Controls.Add(this.txtOther2);
+            this.gbOthers.Location = new System.Drawing.Point(6, 138);
+            this.gbOthers.Name = "gbOthers";
+            this.gbOthers.Size = new System.Drawing.Size(343, 152);
+            this.gbOthers.TabIndex = 25;
+            this.gbOthers.TabStop = false;
+            this.gbOthers.Text = "OTHERS";
             // 
             // txtOther1
             // 
@@ -483,8 +456,50 @@
             this.txtOther1.Location = new System.Drawing.Point(140, 34);
             this.txtOther1.Name = "txtOther1";
             this.txtOther1.Size = new System.Drawing.Size(188, 23);
-            this.txtOther1.TabIndex = 20;
+            this.txtOther1.TabIndex = 21;
             this.txtOther1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
+            // 
+            // txtOther3Txt
+            // 
+            this.txtOther3Txt.HideSelection = false;
+            this.txtOther3Txt.Location = new System.Drawing.Point(11, 92);
+            this.txtOther3Txt.Name = "txtOther3Txt";
+            this.txtOther3Txt.Size = new System.Drawing.Size(99, 23);
+            this.txtOther3Txt.TabIndex = 24;
+            // 
+            // txtOther3
+            // 
+            this.txtOther3.HideSelection = false;
+            this.txtOther3.Location = new System.Drawing.Point(140, 92);
+            this.txtOther3.Name = "txtOther3";
+            this.txtOther3.Size = new System.Drawing.Size(188, 23);
+            this.txtOther3.TabIndex = 25;
+            this.txtOther3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
+            // 
+            // txtOther1Txt
+            // 
+            this.txtOther1Txt.HideSelection = false;
+            this.txtOther1Txt.Location = new System.Drawing.Point(11, 34);
+            this.txtOther1Txt.Name = "txtOther1Txt";
+            this.txtOther1Txt.Size = new System.Drawing.Size(99, 23);
+            this.txtOther1Txt.TabIndex = 20;
+            // 
+            // txtOther2Txt
+            // 
+            this.txtOther2Txt.HideSelection = false;
+            this.txtOther2Txt.Location = new System.Drawing.Point(11, 63);
+            this.txtOther2Txt.Name = "txtOther2Txt";
+            this.txtOther2Txt.Size = new System.Drawing.Size(99, 23);
+            this.txtOther2Txt.TabIndex = 22;
+            // 
+            // txtOther2
+            // 
+            this.txtOther2.HideSelection = false;
+            this.txtOther2.Location = new System.Drawing.Point(140, 63);
+            this.txtOther2.Name = "txtOther2";
+            this.txtOther2.Size = new System.Drawing.Size(188, 23);
+            this.txtOther2.TabIndex = 23;
+            this.txtOther2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // txtBonus
             // 
@@ -492,7 +507,7 @@
             this.txtBonus.Location = new System.Drawing.Point(146, 109);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.Size = new System.Drawing.Size(188, 23);
-            this.txtBonus.TabIndex = 18;
+            this.txtBonus.TabIndex = 19;
             this.txtBonus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblBonus
@@ -510,7 +525,7 @@
             this.txtIncentives.Location = new System.Drawing.Point(146, 80);
             this.txtIncentives.Name = "txtIncentives";
             this.txtIncentives.Size = new System.Drawing.Size(188, 23);
-            this.txtIncentives.TabIndex = 17;
+            this.txtIncentives.TabIndex = 18;
             this.txtIncentives.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblIncentives
@@ -528,7 +543,7 @@
             this.txtAllowance.Location = new System.Drawing.Point(146, 51);
             this.txtAllowance.Name = "txtAllowance";
             this.txtAllowance.Size = new System.Drawing.Size(188, 23);
-            this.txtAllowance.TabIndex = 16;
+            this.txtAllowance.TabIndex = 17;
             this.txtAllowance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblAllowance
@@ -546,7 +561,7 @@
             this.txtOT.Location = new System.Drawing.Point(146, 22);
             this.txtOT.Name = "txtOT";
             this.txtOT.Size = new System.Drawing.Size(188, 23);
-            this.txtOT.TabIndex = 15;
+            this.txtOT.TabIndex = 16;
             this.txtOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblOT
@@ -558,18 +573,18 @@
             this.lblOT.TabIndex = 12;
             this.lblOT.Text = "O.T. : ";
             // 
-            // groupBox4
+            // gbRemarks
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox4.Controls.Add(this.txtRemarks);
-            this.groupBox4.Controls.Add(this.lblRemarks);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(375, 439);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(355, 256);
-            this.groupBox4.TabIndex = 27;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "REMARKS";
+            this.gbRemarks.BackColor = System.Drawing.Color.Transparent;
+            this.gbRemarks.Controls.Add(this.txtRemarks);
+            this.gbRemarks.Controls.Add(this.lblRemarks);
+            this.gbRemarks.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRemarks.Location = new System.Drawing.Point(375, 439);
+            this.gbRemarks.Name = "gbRemarks";
+            this.gbRemarks.Size = new System.Drawing.Size(355, 256);
+            this.gbRemarks.TabIndex = 27;
+            this.gbRemarks.TabStop = false;
+            this.gbRemarks.Text = "REMARKS";
             // 
             // txtRemarks
             // 
@@ -578,7 +593,7 @@
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(314, 193);
-            this.txtRemarks.TabIndex = 25;
+            this.txtRemarks.TabIndex = 26;
             // 
             // lblRemarks
             // 
@@ -613,6 +628,24 @@
             this.gbEmployee.TabIndex = 28;
             this.gbEmployee.TabStop = false;
             this.gbEmployee.Text = "EMPLOYEE INFORMATION";
+            // 
+            // lblBranchContent
+            // 
+            this.lblBranchContent.AutoSize = true;
+            this.lblBranchContent.Location = new System.Drawing.Point(552, 76);
+            this.lblBranchContent.Name = "lblBranchContent";
+            this.lblBranchContent.Size = new System.Drawing.Size(49, 15);
+            this.lblBranchContent.TabIndex = 25;
+            this.lblBranchContent.Text = "######";
+            // 
+            // lblBranch
+            // 
+            this.lblBranch.AutoSize = true;
+            this.lblBranch.Location = new System.Drawing.Point(449, 76);
+            this.lblBranch.Name = "lblBranch";
+            this.lblBranch.Size = new System.Drawing.Size(65, 15);
+            this.lblBranch.TabIndex = 24;
+            this.lblBranch.Text = "BRANCH : ";
             // 
             // lblBasicSalaryContent
             // 
@@ -674,7 +707,8 @@
             this.dtpTo.Location = new System.Drawing.Point(274, 45);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(112, 23);
-            this.dtpTo.TabIndex = 17;
+            this.dtpTo.TabIndex = 2;
+            this.dtpTo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpTo_KeyPress);
             // 
             // lblDateFrom
             // 
@@ -691,7 +725,7 @@
             this.dtpFrom.Location = new System.Drawing.Point(123, 45);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(112, 23);
-            this.dtpFrom.TabIndex = 15;
+            this.dtpFrom.TabIndex = 1;
             // 
             // lblpayrollDate
             // 
@@ -713,6 +747,7 @@
             this.cnEmployeeName.Size = new System.Drawing.Size(263, 23);
             this.cnEmployeeName.TabIndex = 0;
             this.cnEmployeeName.SelectedIndexChanged += new System.EventHandler(this.cnEmployeeName_SelectedIndexChanged);
+            this.cnEmployeeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cnEmployeeName_KeyPress);
             this.cnEmployeeName.Leave += new System.EventHandler(this.cnEmployeeName_Leave);
             // 
             // lblEmployeeName
@@ -730,7 +765,7 @@
             this.btnGenerate.Location = new System.Drawing.Point(748, 32);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(118, 86);
-            this.btnGenerate.TabIndex = 29;
+            this.btnGenerate.TabIndex = 27;
             this.btnGenerate.Text = "GENERATE";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
@@ -741,7 +776,7 @@
             this.btnClose.Location = new System.Drawing.Point(748, 124);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(118, 86);
-            this.btnClose.TabIndex = 30;
+            this.btnClose.TabIndex = 28;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button2_Click);
@@ -757,39 +792,6 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
-            // lblBranchContent
-            // 
-            this.lblBranchContent.AutoSize = true;
-            this.lblBranchContent.Location = new System.Drawing.Point(552, 76);
-            this.lblBranchContent.Name = "lblBranchContent";
-            this.lblBranchContent.Size = new System.Drawing.Size(49, 15);
-            this.lblBranchContent.TabIndex = 25;
-            this.lblBranchContent.Text = "######";
-            // 
-            // lblBranch
-            // 
-            this.lblBranch.AutoSize = true;
-            this.lblBranch.Location = new System.Drawing.Point(449, 76);
-            this.lblBranch.Name = "lblBranch";
-            this.lblBranch.Size = new System.Drawing.Size(65, 15);
-            this.lblBranch.TabIndex = 24;
-            this.lblBranch.Text = "BRANCH : ";
-            // 
-            // gbOthers
-            // 
-            this.gbOthers.Controls.Add(this.txtOther1);
-            this.gbOthers.Controls.Add(this.txtOther3Txt);
-            this.gbOthers.Controls.Add(this.txtOther3);
-            this.gbOthers.Controls.Add(this.txtOther1Txt);
-            this.gbOthers.Controls.Add(this.txtOther2Txt);
-            this.gbOthers.Controls.Add(this.txtOther2);
-            this.gbOthers.Location = new System.Drawing.Point(6, 138);
-            this.gbOthers.Name = "gbOthers";
-            this.gbOthers.Size = new System.Drawing.Size(343, 152);
-            this.gbOthers.TabIndex = 25;
-            this.gbOthers.TabStop = false;
-            this.gbOthers.Text = "OTHERS";
-            // 
             // frmGeneratePayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -801,7 +803,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.gbEmployee);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.gbRemarks);
             this.Controls.Add(this.gbAdditional);
             this.Controls.Add(this.gbDeductions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -817,13 +819,13 @@
             this.gbGDeduction.PerformLayout();
             this.gbAdditional.ResumeLayout(false);
             this.gbAdditional.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbOthers.ResumeLayout(false);
+            this.gbOthers.PerformLayout();
+            this.gbRemarks.ResumeLayout(false);
+            this.gbRemarks.PerformLayout();
             this.gbEmployee.ResumeLayout(false);
             this.gbEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.gbOthers.ResumeLayout(false);
-            this.gbOthers.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -873,7 +875,7 @@
         private System.Windows.Forms.Label lblAllowance;
         private System.Windows.Forms.TextBox txtOT;
         private System.Windows.Forms.Label lblOT;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbRemarks;
         private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Label lblRemarks;
         private System.Windows.Forms.TextBox txtOther;
