@@ -40,9 +40,14 @@ namespace GatebankPayroll
             if(forGeneratePayroll.forGeneratePayrollDAO.saveGeneratedpayroll(txtSSSD.Text, txtPagIbigD.Text, txtPHD.Text, txtWTaxD.Text, txtSSSLoanD.Text, txtPagIbigLoan.Text,
                 txtProviLoan.Text, txtAbsent.Text, txtLate.Text, txtProviFund.Text, txtSMCard.Text, txtArHCard.Text, txtOther.Text,
                 txtOT.Text, txtAllowance.Text, txtIncentives.Text, txtBonus.Text, txtOther1Txt.Text, txtOther1.Text, txtOther2Txt.Text, txtOther2.Text, txtOther3Txt.Text, txtOther3.Text,
-                txtRemarks.Text, cnEmployeeName.Text, dtpFrom.Text, dtpTo.Text))
+                txtRemarks.Text, cnEmployeeName.Text, dtpFrom.Text, dtpTo.Text,lblAdditionals.Text,lblDeductions.Text,lblTakeHomePay.Text))
             {
                 MessageBox.Show("Payroll Saved", "Gearate Payroll", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxOnloadValue();
+                cnEmployeeName.Text = "---Select Employee---";
+                lblBasicSalaryContent.Text = "######";
+                lblPositionContent.Text = "######";
+                lblBranchContent.Text = "######";
             }
             else
             {
@@ -70,6 +75,7 @@ namespace GatebankPayroll
             dateTimePickerSetEnable(false);
             formDetailsSetEnable(false);
             cnEmployeeName.Text = "---Select Employee---";
+            btnGenerate.Enabled = false;
             textBoxOnloadValue();
             getEmployeDetails();
         }
@@ -98,6 +104,11 @@ namespace GatebankPayroll
             txtOther1.Text = "0.00";
             txtOther2.Text = "0.00";
             txtOther3.Text = "0.00";
+
+            lblAdditionals.Text = "######";
+            lblDeductions.Text = "######";
+            lblGrossSalary.Text = "######";
+            lblTakeHomePay.Text = "######";
         }
         public void getEmployeDetails()
         {
@@ -121,6 +132,8 @@ namespace GatebankPayroll
                     lblBranchContent.Text = employeeNames[cnEmployeeName.Text + "branch"];
                 }
                 textBoxOnloadValue();
+                formDetailsSetEnable(false);
+                txtSSSD.Text = Global.forEE(Convert.ToDouble(lblBasicSalaryContent.Text)).ToString();
             }
             else
             {
@@ -128,6 +141,7 @@ namespace GatebankPayroll
                 dateTimePickerSetEnable(false);
             }
 
+            enableGenerateButton();
         }
         private bool employeeExisting()
         {
@@ -151,6 +165,7 @@ namespace GatebankPayroll
                     {
                         exist = true;
                         dateTimePickerSetEnable(true);
+                        SendKeys.Send("{TAB}");
                         break;
                     }
                 }
@@ -218,7 +233,7 @@ namespace GatebankPayroll
             gbOthers.Enabled = args;
             gbLoanDeductions.Enabled = args;
             gbRemarks.Enabled = args;
-            btnGenerate.Enabled = args;
+            btnCompute.Enabled = args;
         }
         private void dateTimePickerSetEnable(bool args)
         {
@@ -238,17 +253,88 @@ namespace GatebankPayroll
                 else
                 {
                     formDetailsSetEnable(true);
-                    SendKeys.Send("{TAB}");
                 }
             }
         }
 
         private void cnEmployeeName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+
+        }
+
+        private void all_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void btnCompute_Click(object sender, EventArgs e)
+        {
+            all_onLeave();
+            lblAdditionals.Text = computeAdditional().ToString();
+            lblDeductions.Text = computeDeduction().ToString();
+            lblGrossSalary.Text = (Convert.ToDouble(lblBasicSalaryContent.Text) + Convert.ToDouble(lblAdditionals.Text)).ToString();
+            lblTakeHomePay.Text = (Convert.ToDouble(lblGrossSalary.Text) - Convert.ToDouble(lblDeductions.Text)).ToString();
+            enableGenerateButton();
+        }
+
+        private void enableGenerateButton()
+        {
+            bool exist = false;
+            var check = this.gbPayrollSummary.Controls.OfType<Label>().ToArray();
+            foreach (Label t in check)
+            {
+                if (t.Text == "######")
+                {
+                    exist = true;
+                }
+            }
+            if (exist)
+            {
+                btnGenerate.Enabled = false;
+            }
+            else
+            {
+                btnGenerate.Enabled = true;
+            }
+        }
+
+        private double computeAdditional()
+        {
+            double addTotal = 0.00;
+            var add = this.gbAdditional.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox t in add)
+            {
+                addTotal = Convert.ToDouble(t.Text) + addTotal;
+            }
+
+            addTotal = addTotal + Convert.ToDouble(txtOther1.Text) + Convert.ToDouble(txtOther2.Text) + Convert.ToDouble(txtOther3.Text);
+
+            return addTotal;
+        }
+        private double computeDeduction()
+        {
+            double deducTotal = 0.00;
+            var gd = this.gbGDeduction.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox t in gd)
+            {
+                deducTotal = Convert.ToDouble(t.Text) + deducTotal;
+            }
+
+            var ld = this.gbLoanDeductions.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox t in ld)
+            {
+                deducTotal = Convert.ToDouble(t.Text) + deducTotal;
+            }
+
+            var cd = this.gbComanyDeduction.Controls.OfType<TextBox>().ToArray();
+            foreach (TextBox t in cd)
+            {
+                deducTotal = Convert.ToDouble(t.Text) + deducTotal;
+            }
+            return deducTotal;
         }
     }
 }

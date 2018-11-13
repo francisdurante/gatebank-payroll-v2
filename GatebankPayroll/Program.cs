@@ -16,7 +16,7 @@ namespace GatebankPayroll
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGeneratePayroll());
+            Application.Run(new frmLogin());
         }
     }
 }

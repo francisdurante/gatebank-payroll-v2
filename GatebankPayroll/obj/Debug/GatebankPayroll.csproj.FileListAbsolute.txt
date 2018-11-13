@@ -11,3 +11,4 @@ C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debu
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.frmMain.resources
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.frmGeneratePayroll.resources
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.frmAddEmployee.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.SSSTable.resources

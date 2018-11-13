@@ -95,6 +95,20 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gbPayrollSummary = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblAdditionals = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblGrossSalary = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblDeductions = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblTakeHomePay = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnCompute = new System.Windows.Forms.Button();
             this.gbDeductions.SuspendLayout();
             this.gbComanyDeduction.SuspendLayout();
             this.gbLoanDeductions.SuspendLayout();
@@ -104,6 +118,7 @@
             this.gbRemarks.SuspendLayout();
             this.gbEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbPayrollSummary.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDeductions
@@ -145,11 +160,11 @@
             // 
             // txtOther
             // 
-            this.txtOther.HideSelection = false;
             this.txtOther.Location = new System.Drawing.Point(145, 167);
             this.txtOther.Name = "txtOther";
             this.txtOther.Size = new System.Drawing.Size(188, 23);
             this.txtOther.TabIndex = 15;
+            this.txtOther.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblOthers
@@ -163,11 +178,11 @@
             // 
             // txtArHCard
             // 
-            this.txtArHCard.HideSelection = false;
             this.txtArHCard.Location = new System.Drawing.Point(145, 138);
             this.txtArHCard.Name = "txtArHCard";
             this.txtArHCard.Size = new System.Drawing.Size(188, 23);
             this.txtArHCard.TabIndex = 14;
+            this.txtArHCard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtArHCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblARCard
@@ -181,11 +196,11 @@
             // 
             // txtSMCard
             // 
-            this.txtSMCard.HideSelection = false;
             this.txtSMCard.Location = new System.Drawing.Point(145, 109);
             this.txtSMCard.Name = "txtSMCard";
             this.txtSMCard.Size = new System.Drawing.Size(188, 23);
             this.txtSMCard.TabIndex = 13;
+            this.txtSMCard.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtSMCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblSMcard
@@ -199,11 +214,11 @@
             // 
             // txtProviFund
             // 
-            this.txtProviFund.HideSelection = false;
             this.txtProviFund.Location = new System.Drawing.Point(145, 80);
             this.txtProviFund.Name = "txtProviFund";
             this.txtProviFund.Size = new System.Drawing.Size(188, 23);
             this.txtProviFund.TabIndex = 12;
+            this.txtProviFund.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtProviFund.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblProvident
@@ -217,11 +232,11 @@
             // 
             // txtLate
             // 
-            this.txtLate.HideSelection = false;
             this.txtLate.Location = new System.Drawing.Point(145, 51);
             this.txtLate.Name = "txtLate";
             this.txtLate.Size = new System.Drawing.Size(188, 23);
             this.txtLate.TabIndex = 11;
+            this.txtLate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtLate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblLate
@@ -235,11 +250,11 @@
             // 
             // txtAbsent
             // 
-            this.txtAbsent.HideSelection = false;
             this.txtAbsent.Location = new System.Drawing.Point(145, 22);
             this.txtAbsent.Name = "txtAbsent";
             this.txtAbsent.Size = new System.Drawing.Size(188, 23);
             this.txtAbsent.TabIndex = 10;
+            this.txtAbsent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtAbsent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblAbsent
@@ -270,11 +285,11 @@
             // 
             // txtProviLoan
             // 
-            this.txtProviLoan.HideSelection = false;
             this.txtProviLoan.Location = new System.Drawing.Point(145, 80);
             this.txtProviLoan.Name = "txtProviLoan";
             this.txtProviLoan.Size = new System.Drawing.Size(188, 23);
             this.txtProviLoan.TabIndex = 9;
+            this.txtProviLoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtProviLoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblProviLoan
@@ -288,11 +303,11 @@
             // 
             // txtPagIbigLoan
             // 
-            this.txtPagIbigLoan.HideSelection = false;
             this.txtPagIbigLoan.Location = new System.Drawing.Point(145, 51);
             this.txtPagIbigLoan.Name = "txtPagIbigLoan";
             this.txtPagIbigLoan.Size = new System.Drawing.Size(188, 23);
             this.txtPagIbigLoan.TabIndex = 8;
+            this.txtPagIbigLoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtPagIbigLoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // pagIbigLoan
@@ -306,11 +321,11 @@
             // 
             // txtSSSLoanD
             // 
-            this.txtSSSLoanD.HideSelection = false;
             this.txtSSSLoanD.Location = new System.Drawing.Point(145, 22);
             this.txtSSSLoanD.Name = "txtSSSLoanD";
             this.txtSSSLoanD.Size = new System.Drawing.Size(188, 23);
             this.txtSSSLoanD.TabIndex = 7;
+            this.txtSSSLoanD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtSSSLoanD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblSSSLoan
@@ -343,12 +358,12 @@
             // 
             // txtWTaxD
             // 
-            this.txtWTaxD.HideSelection = false;
             this.txtWTaxD.Location = new System.Drawing.Point(145, 109);
             this.txtWTaxD.Name = "txtWTaxD";
             this.txtWTaxD.Size = new System.Drawing.Size(188, 23);
             this.txtWTaxD.TabIndex = 6;
             this.txtWTaxD.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.txtWTaxD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtWTaxD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblWTax
@@ -362,11 +377,11 @@
             // 
             // txtPHD
             // 
-            this.txtPHD.HideSelection = false;
             this.txtPHD.Location = new System.Drawing.Point(145, 80);
             this.txtPHD.Name = "txtPHD";
             this.txtPHD.Size = new System.Drawing.Size(188, 23);
             this.txtPHD.TabIndex = 5;
+            this.txtPHD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtPHD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblPH
@@ -380,11 +395,11 @@
             // 
             // txtPagIbigD
             // 
-            this.txtPagIbigD.HideSelection = false;
             this.txtPagIbigD.Location = new System.Drawing.Point(145, 51);
             this.txtPagIbigD.Name = "txtPagIbigD";
             this.txtPagIbigD.Size = new System.Drawing.Size(188, 23);
             this.txtPagIbigD.TabIndex = 4;
+            this.txtPagIbigD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtPagIbigD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblPagIbig
@@ -399,11 +414,11 @@
             // txtSSSD
             // 
             this.txtSSSD.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSSSD.HideSelection = false;
             this.txtSSSD.Location = new System.Drawing.Point(145, 22);
             this.txtSSSD.Name = "txtSSSD";
             this.txtSSSD.Size = new System.Drawing.Size(188, 23);
             this.txtSSSD.TabIndex = 3;
+            this.txtSSSD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtSSSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblSSS
@@ -452,62 +467,62 @@
             // 
             // txtOther1
             // 
-            this.txtOther1.HideSelection = false;
             this.txtOther1.Location = new System.Drawing.Point(140, 34);
             this.txtOther1.Name = "txtOther1";
             this.txtOther1.Size = new System.Drawing.Size(188, 23);
             this.txtOther1.TabIndex = 21;
+            this.txtOther1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtOther1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // txtOther3Txt
             // 
-            this.txtOther3Txt.HideSelection = false;
             this.txtOther3Txt.Location = new System.Drawing.Point(11, 92);
             this.txtOther3Txt.Name = "txtOther3Txt";
             this.txtOther3Txt.Size = new System.Drawing.Size(99, 23);
             this.txtOther3Txt.TabIndex = 24;
+            this.txtOther3Txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             // 
             // txtOther3
             // 
-            this.txtOther3.HideSelection = false;
             this.txtOther3.Location = new System.Drawing.Point(140, 92);
             this.txtOther3.Name = "txtOther3";
             this.txtOther3.Size = new System.Drawing.Size(188, 23);
             this.txtOther3.TabIndex = 25;
+            this.txtOther3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtOther3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // txtOther1Txt
             // 
-            this.txtOther1Txt.HideSelection = false;
             this.txtOther1Txt.Location = new System.Drawing.Point(11, 34);
             this.txtOther1Txt.Name = "txtOther1Txt";
             this.txtOther1Txt.Size = new System.Drawing.Size(99, 23);
             this.txtOther1Txt.TabIndex = 20;
+            this.txtOther1Txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             // 
             // txtOther2Txt
             // 
-            this.txtOther2Txt.HideSelection = false;
             this.txtOther2Txt.Location = new System.Drawing.Point(11, 63);
             this.txtOther2Txt.Name = "txtOther2Txt";
             this.txtOther2Txt.Size = new System.Drawing.Size(99, 23);
             this.txtOther2Txt.TabIndex = 22;
+            this.txtOther2Txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             // 
             // txtOther2
             // 
-            this.txtOther2.HideSelection = false;
             this.txtOther2.Location = new System.Drawing.Point(140, 63);
             this.txtOther2.Name = "txtOther2";
             this.txtOther2.Size = new System.Drawing.Size(188, 23);
             this.txtOther2.TabIndex = 23;
+            this.txtOther2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtOther2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // txtBonus
             // 
-            this.txtBonus.HideSelection = false;
             this.txtBonus.Location = new System.Drawing.Point(146, 109);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.Size = new System.Drawing.Size(188, 23);
             this.txtBonus.TabIndex = 19;
+            this.txtBonus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtBonus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblBonus
@@ -521,11 +536,11 @@
             // 
             // txtIncentives
             // 
-            this.txtIncentives.HideSelection = false;
             this.txtIncentives.Location = new System.Drawing.Point(146, 80);
             this.txtIncentives.Name = "txtIncentives";
             this.txtIncentives.Size = new System.Drawing.Size(188, 23);
             this.txtIncentives.TabIndex = 18;
+            this.txtIncentives.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtIncentives.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblIncentives
@@ -539,11 +554,11 @@
             // 
             // txtAllowance
             // 
-            this.txtAllowance.HideSelection = false;
             this.txtAllowance.Location = new System.Drawing.Point(146, 51);
             this.txtAllowance.Name = "txtAllowance";
             this.txtAllowance.Size = new System.Drawing.Size(188, 23);
             this.txtAllowance.TabIndex = 17;
+            this.txtAllowance.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtAllowance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblAllowance
@@ -557,11 +572,11 @@
             // 
             // txtOT
             // 
-            this.txtOT.HideSelection = false;
             this.txtOT.Location = new System.Drawing.Point(146, 22);
             this.txtOT.Name = "txtOT";
             this.txtOT.Size = new System.Drawing.Size(188, 23);
             this.txtOT.TabIndex = 16;
+            this.txtOT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.txtOT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             // 
             // lblOT
@@ -588,12 +603,12 @@
             // 
             // txtRemarks
             // 
-            this.txtRemarks.HideSelection = false;
             this.txtRemarks.Location = new System.Drawing.Point(20, 46);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(314, 193);
             this.txtRemarks.TabIndex = 26;
+            this.txtRemarks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             // 
             // lblRemarks
             // 
@@ -609,8 +624,6 @@
             this.gbEmployee.BackColor = System.Drawing.Color.Transparent;
             this.gbEmployee.Controls.Add(this.lblBranchContent);
             this.gbEmployee.Controls.Add(this.lblBranch);
-            this.gbEmployee.Controls.Add(this.lblBasicSalaryContent);
-            this.gbEmployee.Controls.Add(this.lblbasicSalary);
             this.gbEmployee.Controls.Add(this.lblPositionContent);
             this.gbEmployee.Controls.Add(this.lblPosition);
             this.gbEmployee.Controls.Add(this.label24);
@@ -632,7 +645,7 @@
             // lblBranchContent
             // 
             this.lblBranchContent.AutoSize = true;
-            this.lblBranchContent.Location = new System.Drawing.Point(552, 76);
+            this.lblBranchContent.Location = new System.Drawing.Point(552, 45);
             this.lblBranchContent.Name = "lblBranchContent";
             this.lblBranchContent.Size = new System.Drawing.Size(49, 15);
             this.lblBranchContent.TabIndex = 25;
@@ -641,7 +654,7 @@
             // lblBranch
             // 
             this.lblBranch.AutoSize = true;
-            this.lblBranch.Location = new System.Drawing.Point(449, 76);
+            this.lblBranch.Location = new System.Drawing.Point(449, 45);
             this.lblBranch.Name = "lblBranch";
             this.lblBranch.Size = new System.Drawing.Size(65, 15);
             this.lblBranch.TabIndex = 24;
@@ -650,18 +663,18 @@
             // lblBasicSalaryContent
             // 
             this.lblBasicSalaryContent.AutoSize = true;
-            this.lblBasicSalaryContent.Location = new System.Drawing.Point(552, 48);
+            this.lblBasicSalaryContent.Location = new System.Drawing.Point(170, 31);
             this.lblBasicSalaryContent.Name = "lblBasicSalaryContent";
-            this.lblBasicSalaryContent.Size = new System.Drawing.Size(49, 15);
+            this.lblBasicSalaryContent.Size = new System.Drawing.Size(55, 15);
             this.lblBasicSalaryContent.TabIndex = 23;
             this.lblBasicSalaryContent.Text = "######";
             // 
             // lblbasicSalary
             // 
             this.lblbasicSalary.AutoSize = true;
-            this.lblbasicSalary.Location = new System.Drawing.Point(449, 48);
+            this.lblbasicSalary.Location = new System.Drawing.Point(9, 31);
             this.lblbasicSalary.Name = "lblbasicSalary";
-            this.lblbasicSalary.Size = new System.Drawing.Size(97, 15);
+            this.lblbasicSalary.Size = new System.Drawing.Size(108, 15);
             this.lblbasicSalary.TabIndex = 22;
             this.lblbasicSalary.Text = "BASIC SALARY : ";
             // 
@@ -708,6 +721,7 @@
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(112, 23);
             this.dtpTo.TabIndex = 2;
+            this.dtpTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.dtpTo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpTo_KeyPress);
             // 
             // lblDateFrom
@@ -726,6 +740,7 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(112, 23);
             this.dtpFrom.TabIndex = 1;
+            this.dtpFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             // 
             // lblpayrollDate
             // 
@@ -747,7 +762,7 @@
             this.cnEmployeeName.Size = new System.Drawing.Size(263, 23);
             this.cnEmployeeName.TabIndex = 0;
             this.cnEmployeeName.SelectedIndexChanged += new System.EventHandler(this.cnEmployeeName_SelectedIndexChanged);
-            this.cnEmployeeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cnEmployeeName_KeyPress);
+            this.cnEmployeeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.all_KeyDown);
             this.cnEmployeeName.Leave += new System.EventHandler(this.cnEmployeeName_Leave);
             // 
             // lblEmployeeName
@@ -762,10 +777,10 @@
             // btnGenerate
             // 
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Location = new System.Drawing.Point(748, 32);
+            this.btnGenerate.Location = new System.Drawing.Point(744, 389);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(118, 86);
-            this.btnGenerate.TabIndex = 27;
+            this.btnGenerate.TabIndex = 28;
             this.btnGenerate.Text = "GENERATE";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
@@ -773,10 +788,10 @@
             // btnClose
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(748, 124);
+            this.btnClose.Location = new System.Drawing.Point(893, 389);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(118, 86);
-            this.btnClose.TabIndex = 28;
+            this.btnClose.TabIndex = 29;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.button2_Click);
@@ -785,12 +800,159 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GatebankPayroll.Properties.Resources.Picture11;
-            this.pictureBox1.Location = new System.Drawing.Point(736, 645);
+            this.pictureBox1.Location = new System.Drawing.Point(746, 484);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
+            // 
+            // gbPayrollSummary
+            // 
+            this.gbPayrollSummary.BackColor = System.Drawing.Color.Transparent;
+            this.gbPayrollSummary.Controls.Add(this.label12);
+            this.gbPayrollSummary.Controls.Add(this.label11);
+            this.gbPayrollSummary.Controls.Add(this.label9);
+            this.gbPayrollSummary.Controls.Add(this.lblTakeHomePay);
+            this.gbPayrollSummary.Controls.Add(this.label8);
+            this.gbPayrollSummary.Controls.Add(this.label6);
+            this.gbPayrollSummary.Controls.Add(this.lblDeductions);
+            this.gbPayrollSummary.Controls.Add(this.label5);
+            this.gbPayrollSummary.Controls.Add(this.label3);
+            this.gbPayrollSummary.Controls.Add(this.lblGrossSalary);
+            this.gbPayrollSummary.Controls.Add(this.label1);
+            this.gbPayrollSummary.Controls.Add(this.lblAdditionals);
+            this.gbPayrollSummary.Controls.Add(this.lblbasicSalary);
+            this.gbPayrollSummary.Controls.Add(this.lblBasicSalaryContent);
+            this.gbPayrollSummary.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPayrollSummary.Location = new System.Drawing.Point(736, 13);
+            this.gbPayrollSummary.Name = "gbPayrollSummary";
+            this.gbPayrollSummary.Size = new System.Drawing.Size(275, 297);
+            this.gbPayrollSummary.TabIndex = 32;
+            this.gbPayrollSummary.TabStop = false;
+            this.gbPayrollSummary.Text = "PAYROLL SUMMARY";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 15);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "TOTAL ADDITIONAL : ";
+            // 
+            // lblAdditionals
+            // 
+            this.lblAdditionals.AutoSize = true;
+            this.lblAdditionals.Location = new System.Drawing.Point(170, 82);
+            this.lblAdditionals.Name = "lblAdditionals";
+            this.lblAdditionals.Size = new System.Drawing.Size(55, 15);
+            this.lblAdditionals.TabIndex = 25;
+            this.lblAdditionals.Text = "######";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 15);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "GROSS SALARY : ";
+            // 
+            // lblGrossSalary
+            // 
+            this.lblGrossSalary.AutoSize = true;
+            this.lblGrossSalary.Location = new System.Drawing.Point(170, 136);
+            this.lblGrossSalary.Name = "lblGrossSalary";
+            this.lblGrossSalary.Size = new System.Drawing.Size(55, 15);
+            this.lblGrossSalary.TabIndex = 27;
+            this.lblGrossSalary.Text = "######";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(241, 15);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "---------------------------------------";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(140, 15);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "TOTAL DEDUCTION : ";
+            // 
+            // lblDeductions
+            // 
+            this.lblDeductions.AutoSize = true;
+            this.lblDeductions.Location = new System.Drawing.Point(170, 183);
+            this.lblDeductions.Name = "lblDeductions";
+            this.lblDeductions.Size = new System.Drawing.Size(32, 15);
+            this.lblDeductions.TabIndex = 30;
+            this.lblDeductions.Text = "0.00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 211);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(241, 15);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "---------------------------------------";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(9, 230);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(153, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "TAKE HOME PAY : ";
+            // 
+            // lblTakeHomePay
+            // 
+            this.lblTakeHomePay.AutoSize = true;
+            this.lblTakeHomePay.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTakeHomePay.Location = new System.Drawing.Point(170, 230);
+            this.lblTakeHomePay.Name = "lblTakeHomePay";
+            this.lblTakeHomePay.Size = new System.Drawing.Size(70, 21);
+            this.lblTakeHomePay.TabIndex = 33;
+            this.lblTakeHomePay.Text = "######";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 157);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(14, 17);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "-";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(14, 55);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(16, 15);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "+";
+            // 
+            // btnCompute
+            // 
+            this.btnCompute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompute.Location = new System.Drawing.Point(736, 316);
+            this.btnCompute.Name = "btnCompute";
+            this.btnCompute.Size = new System.Drawing.Size(275, 38);
+            this.btnCompute.TabIndex = 27;
+            this.btnCompute.Text = "Compute Summary";
+            this.btnCompute.UseVisualStyleBackColor = true;
+            this.btnCompute.Click += new System.EventHandler(this.btnCompute_Click);
             // 
             // frmGeneratePayroll
             // 
@@ -798,7 +960,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GatebankPayroll.Properties.Resources.thumb16;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(878, 707);
+            this.ClientSize = new System.Drawing.Size(1023, 707);
+            this.Controls.Add(this.btnCompute);
+            this.Controls.Add(this.gbPayrollSummary);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnGenerate);
@@ -808,7 +972,9 @@
             this.Controls.Add(this.gbDeductions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGeneratePayroll";
+            this.ShowInTaskbar = false;
             this.Text = "frmGeneratePayroll";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmGeneratePayroll_Load);
             this.gbDeductions.ResumeLayout(false);
             this.gbComanyDeduction.ResumeLayout(false);
@@ -826,6 +992,8 @@
             this.gbEmployee.ResumeLayout(false);
             this.gbEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbPayrollSummary.ResumeLayout(false);
+            this.gbPayrollSummary.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -899,5 +1067,19 @@
         private System.Windows.Forms.Label lblBranchContent;
         private System.Windows.Forms.Label lblBranch;
         private System.Windows.Forms.GroupBox gbOthers;
+        private System.Windows.Forms.GroupBox gbPayrollSummary;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTakeHomePay;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblDeductions;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblGrossSalary;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAdditionals;
+        private System.Windows.Forms.Button btnCompute;
     }
 }

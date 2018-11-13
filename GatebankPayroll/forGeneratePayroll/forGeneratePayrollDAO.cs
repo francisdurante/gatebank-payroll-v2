@@ -12,7 +12,7 @@ namespace GatebankPayroll.forGeneratePayroll
     {
         public static bool saveGeneratedpayroll(string sss, string pagibig,string philhealth,string tax,string sssloan, string pagibigloan, string proviloan, string absent, string late, string provifund, string smcard,string arcard, string other,
             string ot, string allowance, string incentives, string bonus, string other1, string other1v, string other2, string other2v, string other3,string other3v,string remarks,
-            string employeename, string dateFrom, string dateTo)
+            string employeename, string dateFrom, string dateTo,string totalAdd, string totalDeduc,string takeHomePay)
         {
             bool response = false;
 
@@ -48,6 +48,9 @@ namespace GatebankPayroll.forGeneratePayroll
                 toSavePayroll.Parameters.AddWithValue("@employeeName", employeename);
                 toSavePayroll.Parameters.AddWithValue("@dateFrom", Convert.ToDateTime(dateFrom));
                 toSavePayroll.Parameters.AddWithValue("@dateTo", Convert.ToDateTime(dateTo));
+                toSavePayroll.Parameters.AddWithValue("@totaladd", Convert.ToDouble(totalAdd));
+                toSavePayroll.Parameters.AddWithValue("@totaldeduc", Convert.ToDouble(totalDeduc));
+                toSavePayroll.Parameters.AddWithValue("@takehomepay", Convert.ToDouble(takeHomePay));
 
                 int sqlReturn = toSavePayroll.ExecuteNonQuery();
                 if (sqlReturn == -1)
