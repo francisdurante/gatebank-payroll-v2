@@ -117,7 +117,8 @@ namespace GatebankPayroll
             employeeNames = Global.getEmployeeName(1);
             for(int x = 0; x < employeeNames.Count; x++)
             {
-                cnEmployeeName.Items.Add(employeeNames["name"+x]);
+                if(employeeNames.ContainsKey("name"+x))
+                    cnEmployeeName.Items.Add(employeeNames["name"+x]);
             }
         }
 
@@ -139,6 +140,11 @@ namespace GatebankPayroll
             {
                 formDetailsSetEnable(false);
                 dateTimePickerSetEnable(false);
+                lblBasicSalaryContent.Text = "######";
+                lblPositionContent.Text = "######";
+                lblBranchContent.Text = "######";
+                textBoxOnloadValue();
+
             }
 
             enableGenerateButton();

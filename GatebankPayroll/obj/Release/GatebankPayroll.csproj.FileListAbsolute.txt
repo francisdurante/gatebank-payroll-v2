@@ -1,0 +1,14 @@
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Release\Resources\Connection.txt
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Release\GatebankPayroll.exe.config
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Release\GatebankPayroll.exe
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Release\GatebankPayroll.pdb
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.frmAddEmployee.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.frmConnectionStringSetting.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.frmGeneratePayroll.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.frmLogin.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.frmMain.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.Properties.Resources.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.SSSTable.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.csproj.GenerateResource.Cache
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.exe
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.pdb
