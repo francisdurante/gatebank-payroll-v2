@@ -49,21 +49,36 @@
     <Compile Include="Connection.cs" />
     <Compile Include="Cryptography.cs" />
     <Compile Include="forAddEmployee\forAddEmployeeDAO.cs" />
+    <Compile Include="forBrowseUser\ForBrowseUserDAO.cs" />
+    <Compile Include="forBrowseUser\ForBrowseUserVO.cs" />
     <Compile Include="forGeneratePayroll\forGeneratePayrollDAO.cs" />
     <Compile Include="forGeneratePayroll\forGeneratePayrollVO.cs" />
     <Compile Include="forLogin\ForLoginVO.cs" />
     <Compile Include="forLogin\LoginDAO.cs" />
+    <Compile Include="forParameters\ForParametersDAO.cs" />
     <Compile Include="frmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddEmployee.Designer.cs">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBrowseUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowseUser.Designer.cs">
+      <DependentUpon>frmBrowseUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConnectionStringSetting.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConnectionStringSetting.Designer.cs">
       <DependentUpon>frmConnectionStringSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditUser.Designer.cs">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGeneratePayroll.cs">
       <SubType>Form</SubType>
@@ -83,6 +98,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParameters.Designer.cs">
+      <DependentUpon>frmParameters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,8 +116,14 @@
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowseUser.resx">
+      <DependentUpon>frmBrowseUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConnectionStringSetting.resx">
       <DependentUpon>frmConnectionStringSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditUser.resx">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGeneratePayroll.resx">
       <DependentUpon>frmGeneratePayroll.cs</DependentUpon>
@@ -106,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParameters.resx">
+      <DependentUpon>frmParameters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

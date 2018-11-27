@@ -12,3 +12,7 @@ C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debu
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.csproj.GenerateResource.Cache
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.exe
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.pdb
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.csprojResolveAssemblyReference.cache
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.frmParameters.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.frmBrowseUser.resources
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.frmEditUser.resources

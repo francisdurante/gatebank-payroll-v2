@@ -263,7 +263,7 @@ namespace GatebankPayroll
                 SSSDeductionsReader.Close();
                 cn.connect().Close();
             }
-            return deduction;
+            return Math.Round(deduction / 4, 2);
         }
 
         public static double forER(double basicSalary)
@@ -423,6 +423,35 @@ namespace GatebankPayroll
             {
                 return 10.00;
             }
+        }
+
+
+        public static ArrayList getAllAccessLevel()
+        {
+            Connection cn = new Connection();
+            ArrayList response = new ArrayList();
+            try
+            {
+                SqlCommand toGetAllAccessLevel = new SqlCommand("dbo.spGetActiveAccessLevel", cn.connect());
+                toGetAllAccessLevel.CommandType = CommandType.StoredProcedure;
+                SqlDataReader toGetAllAccessLevelReader = toGetAllAccessLevel.ExecuteReader();
+                if (toGetAllAccessLevelReader.HasRows)
+                {
+                    while (toGetAllAccessLevelReader.Read())
+                    {
+                        response.Add(toGetAllAccessLevelReader.GetValue(0).ToString());
+                    }
+                }
+                else
+                {
+                    response = null;
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            cn.connect().Close();
+            return response;
         }
     }
 }

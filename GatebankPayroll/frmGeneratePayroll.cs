@@ -135,6 +135,9 @@ namespace GatebankPayroll
                 textBoxOnloadValue();
                 formDetailsSetEnable(false);
                 txtSSSD.Text = Global.forEE(Convert.ToDouble(lblBasicSalaryContent.Text)).ToString();
+                txtPagIbigD.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(lblBasicSalaryContent.Text, "PAGIBIG");
+                txtPHD.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(lblBasicSalaryContent.Text, "PHILHEALTH");
+                txtProviFund.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(lblBasicSalaryContent.Text, "PROVIFUND");
             }
             else
             {

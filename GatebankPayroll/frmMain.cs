@@ -69,7 +69,7 @@ namespace GatebankPayroll
             }
             else
             {
-                MessageBox.Show("Generate Payroll is Already Opened", "Log In", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Generate Payroll is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -84,7 +84,37 @@ namespace GatebankPayroll
             }
             else
             {
-                MessageBox.Show("Add Employee is Already Opened", "Log In", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Add Employee is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void parametersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = Application.OpenForms["frmParameters"];
+            if (f == null)
+            {
+                frmParameters fgp = new frmParameters();
+                fgp.MdiParent = this;
+                fgp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Parameter Form is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void browseParollUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = Application.OpenForms["frmBrowseUser"];
+            if (f == null)
+            {
+                frmBrowseUser fgp = new frmBrowseUser();
+                fgp.MdiParent = this;
+                fgp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Browse User Form is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

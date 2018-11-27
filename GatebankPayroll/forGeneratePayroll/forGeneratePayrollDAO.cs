@@ -98,5 +98,35 @@ namespace GatebankPayroll.forGeneratePayroll
             cn.connect().Close();
             return response;
         }
+
+      
+        public static string getComputedDeduction(string basicSalary,string process)
+        {
+            string response = "0.00";
+            Connection cn = new Connection();
+            try
+            {
+                SqlCommand toGetParameterForPagIbig = new SqlCommand("dbo.spGetValueParameters", cn.connect());
+                toGetParameterForPagIbig.CommandType = System.Data.CommandType.StoredProcedure;
+                toGetParameterForPagIbig.Parameters.AddWithValue("@for", process);
+
+                SqlDataReader toGetParameterForPagIbigReader = toGetParameterForPagIbig.ExecuteReader();
+                if (toGetParameterForPagIbigReader.HasRows)
+                {
+                    while (toGetParameterForPagIbigReader.Read())
+                    {
+                        response = toGetParameterForPagIbigReader.GetValue(0).ToString();
+                    }
+                }
+                double computed = Math.Round((Convert.ToDouble(basicSalary) * (Convert.ToDouble(response) / 100)) / 4, 2);
+                response = computed.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SQL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            cn.connect().Close();
+            return response;
+        }
     }
 }
