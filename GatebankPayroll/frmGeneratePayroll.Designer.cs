@@ -109,6 +109,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblAdditionals = new System.Windows.Forms.Label();
             this.btnCompute = new System.Windows.Forms.Button();
+            this.lblRealBasicSalary = new System.Windows.Forms.Label();
+            this.lblRealBasicSalaryContent = new System.Windows.Forms.Label();
             this.gbDeductions.SuspendLayout();
             this.gbComanyDeduction.SuspendLayout();
             this.gbLoanDeductions.SuspendLayout();
@@ -759,7 +761,7 @@
             // lblBasicSalaryContent
             // 
             this.lblBasicSalaryContent.AutoSize = true;
-            this.lblBasicSalaryContent.Location = new System.Drawing.Point(170, 31);
+            this.lblBasicSalaryContent.Location = new System.Drawing.Point(193, 83);
             this.lblBasicSalaryContent.Name = "lblBasicSalaryContent";
             this.lblBasicSalaryContent.Size = new System.Drawing.Size(55, 15);
             this.lblBasicSalaryContent.TabIndex = 23;
@@ -768,16 +770,16 @@
             // lblbasicSalary
             // 
             this.lblbasicSalary.AutoSize = true;
-            this.lblbasicSalary.Location = new System.Drawing.Point(9, 31);
+            this.lblbasicSalary.Location = new System.Drawing.Point(7, 83);
             this.lblbasicSalary.Name = "lblbasicSalary";
-            this.lblbasicSalary.Size = new System.Drawing.Size(108, 15);
+            this.lblbasicSalary.Size = new System.Drawing.Size(156, 15);
             this.lblbasicSalary.TabIndex = 22;
-            this.lblbasicSalary.Text = "BASIC SALARY : ";
+            this.lblbasicSalary.Text = "BASIC SALARY  / WEEK: ";
             // 
             // btnGenerate
             // 
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Location = new System.Drawing.Point(744, 389);
+            this.btnGenerate.Location = new System.Drawing.Point(744, 447);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(118, 86);
             this.btnGenerate.TabIndex = 28;
@@ -788,7 +790,7 @@
             // btnClose
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(893, 389);
+            this.btnClose.Location = new System.Drawing.Point(893, 447);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(118, 86);
             this.btnClose.TabIndex = 29;
@@ -800,7 +802,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GatebankPayroll.Properties.Resources.Picture11;
-            this.pictureBox1.Location = new System.Drawing.Point(746, 484);
+            this.pictureBox1.Location = new System.Drawing.Point(746, 542);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(240, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -810,6 +812,8 @@
             // gbPayrollSummary
             // 
             this.gbPayrollSummary.BackColor = System.Drawing.Color.Transparent;
+            this.gbPayrollSummary.Controls.Add(this.lblRealBasicSalary);
+            this.gbPayrollSummary.Controls.Add(this.lblRealBasicSalaryContent);
             this.gbPayrollSummary.Controls.Add(this.label12);
             this.gbPayrollSummary.Controls.Add(this.label11);
             this.gbPayrollSummary.Controls.Add(this.label9);
@@ -827,7 +831,7 @@
             this.gbPayrollSummary.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPayrollSummary.Location = new System.Drawing.Point(736, 13);
             this.gbPayrollSummary.Name = "gbPayrollSummary";
-            this.gbPayrollSummary.Size = new System.Drawing.Size(275, 297);
+            this.gbPayrollSummary.Size = new System.Drawing.Size(275, 355);
             this.gbPayrollSummary.TabIndex = 32;
             this.gbPayrollSummary.TabStop = false;
             this.gbPayrollSummary.Text = "PAYROLL SUMMARY";
@@ -835,7 +839,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 55);
+            this.label12.Location = new System.Drawing.Point(12, 107);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(16, 15);
             this.label12.TabIndex = 36;
@@ -845,7 +849,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 157);
+            this.label11.Location = new System.Drawing.Point(12, 209);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 17);
             this.label11.TabIndex = 35;
@@ -855,7 +859,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 230);
+            this.label9.Location = new System.Drawing.Point(7, 282);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(153, 21);
             this.label9.TabIndex = 32;
@@ -865,7 +869,7 @@
             // 
             this.lblTakeHomePay.AutoSize = true;
             this.lblTakeHomePay.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTakeHomePay.Location = new System.Drawing.Point(170, 230);
+            this.lblTakeHomePay.Location = new System.Drawing.Point(178, 283);
             this.lblTakeHomePay.Name = "lblTakeHomePay";
             this.lblTakeHomePay.Size = new System.Drawing.Size(70, 21);
             this.lblTakeHomePay.TabIndex = 33;
@@ -874,7 +878,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 211);
+            this.label8.Location = new System.Drawing.Point(7, 263);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(241, 15);
             this.label8.TabIndex = 31;
@@ -883,7 +887,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 183);
+            this.label6.Location = new System.Drawing.Point(7, 235);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 15);
             this.label6.TabIndex = 29;
@@ -892,7 +896,7 @@
             // lblDeductions
             // 
             this.lblDeductions.AutoSize = true;
-            this.lblDeductions.Location = new System.Drawing.Point(170, 183);
+            this.lblDeductions.Location = new System.Drawing.Point(193, 235);
             this.lblDeductions.Name = "lblDeductions";
             this.lblDeductions.Size = new System.Drawing.Size(32, 15);
             this.lblDeductions.TabIndex = 30;
@@ -901,7 +905,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 110);
+            this.label5.Location = new System.Drawing.Point(7, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(241, 15);
             this.label5.TabIndex = 28;
@@ -910,7 +914,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 136);
+            this.label3.Location = new System.Drawing.Point(7, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 15);
             this.label3.TabIndex = 26;
@@ -919,7 +923,7 @@
             // lblGrossSalary
             // 
             this.lblGrossSalary.AutoSize = true;
-            this.lblGrossSalary.Location = new System.Drawing.Point(170, 136);
+            this.lblGrossSalary.Location = new System.Drawing.Point(193, 188);
             this.lblGrossSalary.Name = "lblGrossSalary";
             this.lblGrossSalary.Size = new System.Drawing.Size(55, 15);
             this.lblGrossSalary.TabIndex = 27;
@@ -928,7 +932,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 82);
+            this.label1.Location = new System.Drawing.Point(7, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 15);
             this.label1.TabIndex = 24;
@@ -937,7 +941,7 @@
             // lblAdditionals
             // 
             this.lblAdditionals.AutoSize = true;
-            this.lblAdditionals.Location = new System.Drawing.Point(170, 82);
+            this.lblAdditionals.Location = new System.Drawing.Point(193, 134);
             this.lblAdditionals.Name = "lblAdditionals";
             this.lblAdditionals.Size = new System.Drawing.Size(55, 15);
             this.lblAdditionals.TabIndex = 25;
@@ -946,13 +950,31 @@
             // btnCompute
             // 
             this.btnCompute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompute.Location = new System.Drawing.Point(736, 316);
+            this.btnCompute.Location = new System.Drawing.Point(736, 374);
             this.btnCompute.Name = "btnCompute";
             this.btnCompute.Size = new System.Drawing.Size(275, 38);
             this.btnCompute.TabIndex = 27;
             this.btnCompute.Text = "Compute Summary";
             this.btnCompute.UseVisualStyleBackColor = true;
             this.btnCompute.Click += new System.EventHandler(this.btnCompute_Click);
+            // 
+            // lblRealBasicSalary
+            // 
+            this.lblRealBasicSalary.AutoSize = true;
+            this.lblRealBasicSalary.Location = new System.Drawing.Point(8, 45);
+            this.lblRealBasicSalary.Name = "lblRealBasicSalary";
+            this.lblRealBasicSalary.Size = new System.Drawing.Size(108, 15);
+            this.lblRealBasicSalary.TabIndex = 37;
+            this.lblRealBasicSalary.Text = "BASIC SALARY : ";
+            // 
+            // lblRealBasicSalaryContent
+            // 
+            this.lblRealBasicSalaryContent.AutoSize = true;
+            this.lblRealBasicSalaryContent.Location = new System.Drawing.Point(193, 45);
+            this.lblRealBasicSalaryContent.Name = "lblRealBasicSalaryContent";
+            this.lblRealBasicSalaryContent.Size = new System.Drawing.Size(55, 15);
+            this.lblRealBasicSalaryContent.TabIndex = 38;
+            this.lblRealBasicSalaryContent.Text = "######";
             // 
             // frmGeneratePayroll
             // 
@@ -1081,5 +1103,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAdditionals;
         private System.Windows.Forms.Button btnCompute;
+        private System.Windows.Forms.Label lblRealBasicSalary;
+        private System.Windows.Forms.Label lblRealBasicSalaryContent;
     }
 }

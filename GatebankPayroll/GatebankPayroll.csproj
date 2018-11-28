@@ -32,9 +32,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon_7p6_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +54,11 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Cryptography.cs" />
+    <Compile Include="dataSetPayrollDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataSetPayrollDetails.xsd</DependentUpon>
+    </Compile>
     <Compile Include="forAddEmployee\forAddEmployeeDAO.cs" />
     <Compile Include="forBrowseUser\ForBrowseUserDAO.cs" />
     <Compile Include="forBrowseUser\ForBrowseUserVO.cs" />
@@ -56,11 +67,19 @@
     <Compile Include="forLogin\ForLoginVO.cs" />
     <Compile Include="forLogin\LoginDAO.cs" />
     <Compile Include="forParameters\ForParametersDAO.cs" />
+    <Compile Include="forShowPayrollList\ForShowPayrollListDAO.cs" />
+    <Compile Include="forShowPayrollList\ForShowPayrollLisVO.cs" />
     <Compile Include="frmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddEmployee.Designer.cs">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBrowseUser.cs">
       <SubType>Form</SubType>
@@ -104,6 +123,18 @@
     <Compile Include="frmParameters.Designer.cs">
       <DependentUpon>frmParameters.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPayrollDetailsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayrollDetailsReport.Designer.cs">
+      <DependentUpon>frmPayrollDetailsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowPayrollList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowPayrollList.Designer.cs">
+      <DependentUpon>frmShowPayrollList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +146,9 @@
     </Compile>
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrowseUser.resx">
       <DependentUpon>frmBrowseUser.cs</DependentUpon>
@@ -137,14 +171,32 @@
     <EmbeddedResource Include="frmParameters.resx">
       <DependentUpon>frmParameters.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPayrollDetailsReport.resx">
+      <DependentUpon>frmPayrollDetailsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowPayrollList.resx">
+      <DependentUpon>frmShowPayrollList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportForPayrollDetails.rdlc" />
     <EmbeddedResource Include="SSSTable.resx">
       <DependentUpon>SSSTable.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dataSetPayrollDetails.xsc">
+      <DependentUpon>dataSetPayrollDetails.xsd</DependentUpon>
+    </None>
+    <None Include="dataSetPayrollDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataSetPayrollDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataSetPayrollDetails.xss">
+      <DependentUpon>dataSetPayrollDetails.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -179,9 +231,11 @@
     <None Include="Resources\thumb16.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon_7p6_icon.ico" />
     <Content Include="Resources\Connection.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\iconfinder_list-unordered_298815.png" />
     <None Include="Resources\if_maintenance-repair-service-Gear_3853928.png" />
     <None Include="Resources\if_icons_exit2_1564506.png" />
     <None Include="Resources\if_408-Money_21245121.png" />

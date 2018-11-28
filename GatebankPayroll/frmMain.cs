@@ -26,6 +26,18 @@ namespace GatebankPayroll
                     ctrl.BackColor = Color.Azure;
                 }
             }
+            if(forLogin.ForLoginVO.getAccessLevel() == "Payroll Admin")
+            {
+                payrollMS.Visible = true;
+                payrollMaintenanceMS.Visible = true;
+                showPayrollMS.Visible = false;
+            }
+            else
+            {
+                payrollMS.Visible = false;
+                payrollMaintenanceMS.Visible = false;
+                showPayrollMS.Visible = true;
+            }
             ssUserID.Text = "Logged User ID : " + forLogin.ForLoginVO.getUserID();
             ssFullname.Text = "Name : " + forLogin.ForLoginVO.getUserFullName();
             ssAccessLevel.Text = "Access Level : " + forLogin.ForLoginVO.getAccessLevel();
@@ -115,6 +127,21 @@ namespace GatebankPayroll
             else
             {
                 MessageBox.Show("Browse User Form is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void showPayrollMS_Click(object sender, EventArgs e)
+        {
+            Form f = Application.OpenForms["frmShowPayrollList"];
+            if (f == null)
+            {
+                frmShowPayrollList fgp = new frmShowPayrollList();
+                fgp.MdiParent = this;
+                fgp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Payroll List Form is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

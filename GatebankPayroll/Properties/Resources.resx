@@ -121,6 +121,9 @@
   <data name="gradient_series___light_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gradient_series___light_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_maintenance-repair-service-Gear_3853928" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_maintenance-repair-service-Gear_3853928.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_408-Money_21245121" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_408-Money_21245121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,7 @@
   <data name="Picture11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_maintenance-repair-service-Gear_3853928" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_maintenance-repair-service-Gear_3853928.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder_list-unordered_298815" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder_list-unordered_298815.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

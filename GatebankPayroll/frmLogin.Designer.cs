@@ -68,6 +68,7 @@
             this.txtLoginID.Name = "txtLoginID";
             this.txtLoginID.Size = new System.Drawing.Size(291, 21);
             this.txtLoginID.TabIndex = 0;
+            this.txtLoginID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoginID_KeyPress);
             // 
             // txtPassword
             // 

@@ -33,14 +33,14 @@ namespace GatebankPayroll.forBrowseUser
                         users[x, i] = toGetUserDataReader.GetValue(0).ToString(); //ID
                         users[x, ++i] = toGetUserDataReader.GetValue(1).ToString(); //LOGIN ID
                         users[x, ++i] = toGetUserDataReader.GetValue(4).ToString(); //fullname
-                        users[x, ++i] = toGetUserDataReader.GetValue(7).ToString();  //AccessLevel
+                        users[x, ++i] = toGetUserDataReader.GetValue(8).ToString();  //AccessLevel
                         users[x, ++i] = toGetUserDataReader.GetValue(5).ToString(); // status
                         x++;
                     }
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 users = null;
             }
             cn.connect().Close();
@@ -76,11 +76,43 @@ namespace GatebankPayroll.forBrowseUser
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 responseBool = false;
             }
             cn.connect().Close();
             return responseBool;
+        }
+
+        public static int saveUser(string fullName, string logId, string password)
+        {
+            int response = 0;
+            Connection cn = new Connection();
+            try
+            {
+                SqlCommand toCheckUser = new SqlCommand("dbo.spCheckIfExistingUser", cn.connect());
+                toCheckUser.CommandType = System.Data.CommandType.StoredProcedure;
+                toCheckUser.Parameters.AddWithValue("@userLogID", logId);
+                SqlDataReader toCheckUserReader = toCheckUser.ExecuteReader();
+
+                if(toCheckUserReader.HasRows)
+                {
+                    MessageBox.Show("Log ID Already Exist", "Add user", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    SqlCommand toSaveUser = new SqlCommand("dbo.spSaveUser", cn.connect());
+                    toSaveUser.CommandType = System.Data.CommandType.StoredProcedure;
+                    toSaveUser.Parameters.AddWithValue("@fullName", fullName);
+                    toSaveUser.Parameters.AddWithValue("@userLogId",logId);
+                    toSaveUser.Parameters.AddWithValue("@password", Cryptography.Encrypt(logId));
+
+                    response = (int)toSaveUser.ExecuteNonQuery();
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return response;
         }
     }
 }

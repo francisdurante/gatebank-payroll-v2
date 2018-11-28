@@ -91,5 +91,13 @@ namespace GatebankPayroll
                 }
             }
         }
+
+        private void txtLoginID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

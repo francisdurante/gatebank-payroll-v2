@@ -98,8 +98,9 @@ namespace GatebankPayroll
         private void btnSave_Click(object sender, EventArgs e)
         {
             string fullname = txtFirstName.Text + " " + txtLastName.Text;
-            if(forAddEmployee.forAddEmployeeDAO.insertEmployee(fullname, Convert.ToDouble(txtBasicSalary.Text), cbPosition.Text, Convert.ToDateTime(dtpDateHired.Text), cbBranch.Text))
+            if(forAddEmployee.forAddEmployeeDAO.insertEmployee(fullname, Convert.ToDouble(txtBasicSalary.Text), cbPosition.Text, Convert.ToDateTime(dtpDateHired.Text), cbBranch.Text,txtLoginID.Text))
             {
+                MessageBox.Show("Password of employee for payroll account is same as their user login id", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             else

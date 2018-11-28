@@ -43,6 +43,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.cbBranch = new System.Windows.Forms.ComboBox();
             this.lblBranch = new System.Windows.Forms.Label();
+            this.txtLoginID = new System.Windows.Forms.TextBox();
+            this.lblLoginID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GatebankPayroll.Properties.Resources.Picture11;
-            this.pictureBox1.Location = new System.Drawing.Point(300, 183);
+            this.pictureBox1.Location = new System.Drawing.Point(300, 226);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -61,7 +63,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtFirstName.Location = new System.Drawing.Point(135, 12);
+            this.txtFirstName.Location = new System.Drawing.Point(137, 29);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(270, 20);
             this.txtFirstName.TabIndex = 17;
@@ -72,7 +74,7 @@
             this.lblEmployeeFirstName.AutoSize = true;
             this.lblEmployeeFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblEmployeeFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeFirstName.Location = new System.Drawing.Point(12, 14);
+            this.lblEmployeeFirstName.Location = new System.Drawing.Point(14, 31);
             this.lblEmployeeFirstName.Name = "lblEmployeeFirstName";
             this.lblEmployeeFirstName.Size = new System.Drawing.Size(89, 15);
             this.lblEmployeeFirstName.TabIndex = 16;
@@ -81,7 +83,7 @@
             // txtLastName
             // 
             this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtLastName.Location = new System.Drawing.Point(135, 38);
+            this.txtLastName.Location = new System.Drawing.Point(137, 55);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(270, 20);
             this.txtLastName.TabIndex = 19;
@@ -92,7 +94,7 @@
             this.lblLastName.AutoSize = true;
             this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(12, 42);
+            this.lblLastName.Location = new System.Drawing.Point(14, 59);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(88, 15);
             this.lblLastName.TabIndex = 18;
@@ -101,7 +103,7 @@
             // txtBasicSalary
             // 
             this.txtBasicSalary.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtBasicSalary.Location = new System.Drawing.Point(135, 64);
+            this.txtBasicSalary.Location = new System.Drawing.Point(137, 81);
             this.txtBasicSalary.Name = "txtBasicSalary";
             this.txtBasicSalary.Size = new System.Drawing.Size(270, 20);
             this.txtBasicSalary.TabIndex = 21;
@@ -114,7 +116,7 @@
             this.lblBasicSalary.AutoSize = true;
             this.lblBasicSalary.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicSalary.Location = new System.Drawing.Point(12, 66);
+            this.lblBasicSalary.Location = new System.Drawing.Point(14, 83);
             this.lblBasicSalary.Name = "lblBasicSalary";
             this.lblBasicSalary.Size = new System.Drawing.Size(98, 15);
             this.lblBasicSalary.TabIndex = 20;
@@ -126,7 +128,7 @@
             this.lblPosition.AutoSize = true;
             this.lblPosition.BackColor = System.Drawing.Color.Transparent;
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(12, 92);
+            this.lblPosition.Location = new System.Drawing.Point(14, 109);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(71, 15);
             this.lblPosition.TabIndex = 22;
@@ -139,7 +141,7 @@
             this.cbPosition.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Location = new System.Drawing.Point(135, 93);
+            this.cbPosition.Location = new System.Drawing.Point(137, 110);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(270, 21);
             this.cbPosition.TabIndex = 23;
@@ -151,7 +153,7 @@
             this.lblDateHired.AutoSize = true;
             this.lblDateHired.BackColor = System.Drawing.Color.Transparent;
             this.lblDateHired.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateHired.Location = new System.Drawing.Point(12, 119);
+            this.lblDateHired.Location = new System.Drawing.Point(14, 136);
             this.lblDateHired.Name = "lblDateHired";
             this.lblDateHired.Size = new System.Drawing.Size(88, 15);
             this.lblDateHired.TabIndex = 24;
@@ -161,7 +163,7 @@
             // 
             this.dtpDateHired.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpDateHired.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateHired.Location = new System.Drawing.Point(135, 121);
+            this.dtpDateHired.Location = new System.Drawing.Point(137, 138);
             this.dtpDateHired.Name = "dtpDateHired";
             this.dtpDateHired.Size = new System.Drawing.Size(270, 20);
             this.dtpDateHired.TabIndex = 25;
@@ -170,7 +172,7 @@
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(11, 183);
+            this.btnSave.Location = new System.Drawing.Point(10, 226);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(133, 50);
             this.btnSave.TabIndex = 26;
@@ -182,7 +184,7 @@
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(150, 183);
+            this.btnCancel.Location = new System.Drawing.Point(149, 226);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(133, 50);
             this.btnCancel.TabIndex = 27;
@@ -197,7 +199,7 @@
             this.cbBranch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbBranch.FormattingEnabled = true;
-            this.cbBranch.Location = new System.Drawing.Point(135, 147);
+            this.cbBranch.Location = new System.Drawing.Point(137, 164);
             this.cbBranch.Name = "cbBranch";
             this.cbBranch.Size = new System.Drawing.Size(270, 21);
             this.cbBranch.TabIndex = 29;
@@ -209,11 +211,30 @@
             this.lblBranch.AutoSize = true;
             this.lblBranch.BackColor = System.Drawing.Color.Transparent;
             this.lblBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBranch.Location = new System.Drawing.Point(12, 146);
+            this.lblBranch.Location = new System.Drawing.Point(14, 163);
             this.lblBranch.Name = "lblBranch";
             this.lblBranch.Size = new System.Drawing.Size(64, 15);
             this.lblBranch.TabIndex = 28;
             this.lblBranch.Text = "Branch : ";
+            // 
+            // txtLoginID
+            // 
+            this.txtLoginID.Location = new System.Drawing.Point(137, 191);
+            this.txtLoginID.MaxLength = 4;
+            this.txtLoginID.Name = "txtLoginID";
+            this.txtLoginID.Size = new System.Drawing.Size(270, 20);
+            this.txtLoginID.TabIndex = 30;
+            // 
+            // lblLoginID
+            // 
+            this.lblLoginID.AutoSize = true;
+            this.lblLoginID.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoginID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoginID.Location = new System.Drawing.Point(14, 192);
+            this.lblLoginID.Name = "lblLoginID";
+            this.lblLoginID.Size = new System.Drawing.Size(69, 15);
+            this.lblLoginID.TabIndex = 31;
+            this.lblLoginID.Text = "Login ID :";
             // 
             // frmAddEmployee
             // 
@@ -221,7 +242,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GatebankPayroll.Properties.Resources.thumb16;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(452, 243);
+            this.ClientSize = new System.Drawing.Size(454, 324);
+            this.Controls.Add(this.txtLoginID);
+            this.Controls.Add(this.lblLoginID);
             this.Controls.Add(this.cbBranch);
             this.Controls.Add(this.lblBranch);
             this.Controls.Add(this.btnCancel);
@@ -264,5 +287,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cbBranch;
         private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.TextBox txtLoginID;
+        private System.Windows.Forms.Label lblLoginID;
     }
 }

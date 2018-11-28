@@ -37,6 +37,7 @@ namespace GatebankPayroll.forLogin
                         ForLoginVO.setUserID(Convert.ToInt32(spLoginReader["ID"]));
                         ForLoginVO.setFullName(spLoginReader["full_name"].ToString());
                         ForLoginVO.setAccessLevel(spLoginReader["name"].ToString());
+                        ForLoginVO.setID(spLoginReader["EmployeeID"].ToString());
                     }
                 }
             }

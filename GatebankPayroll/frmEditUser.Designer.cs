@@ -83,6 +83,7 @@
             // 
             // txtLoginID
             // 
+            this.txtLoginID.Enabled = false;
             this.txtLoginID.Location = new System.Drawing.Point(12, 153);
             this.txtLoginID.Name = "txtLoginID";
             this.txtLoginID.Size = new System.Drawing.Size(340, 20);

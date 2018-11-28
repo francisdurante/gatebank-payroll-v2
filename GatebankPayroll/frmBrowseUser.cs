@@ -65,5 +65,18 @@ namespace GatebankPayroll
         {
             getUsers(txtSearch.Text);
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddUser fau = new frmAddUser();
+            fau.MdiParent = this.MdiParent;
+            fau.Show();
+            Close();
+        }
+
+        private void getAccessLevel()
+        {
+
+        }
     }
 }

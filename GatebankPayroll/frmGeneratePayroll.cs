@@ -18,6 +18,7 @@ namespace GatebankPayroll
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+        double realBasicSalary = 0.00;
         Dictionary<string,string> employeeNames;
         public frmGeneratePayroll()
         {
@@ -46,6 +47,8 @@ namespace GatebankPayroll
                 textBoxOnloadValue();
                 cnEmployeeName.Text = "---Select Employee---";
                 lblBasicSalaryContent.Text = "######";
+                lblRealBasicSalaryContent.Text = "######";
+                realBasicSalary = 0.00;
                 lblPositionContent.Text = "######";
                 lblBranchContent.Text = "######";
             }
@@ -128,22 +131,27 @@ namespace GatebankPayroll
             {
                 for (int x = 0; x < employeeNames.Count; x++)
                 {
-                    lblBasicSalaryContent.Text = employeeNames[cnEmployeeName.Text + "salary"];
+                    double basicSalaryPerWeek = Convert.ToDouble(employeeNames[cnEmployeeName.Text + "salary"]) / 4;
+                    realBasicSalary = Convert.ToDouble(employeeNames[cnEmployeeName.Text + "salary"]);
+                    lblRealBasicSalaryContent.Text = employeeNames[cnEmployeeName.Text + "salary"];
+                    lblBasicSalaryContent.Text = basicSalaryPerWeek.ToString();
                     lblPositionContent.Text = employeeNames[cnEmployeeName.Text + "position"];
                     lblBranchContent.Text = employeeNames[cnEmployeeName.Text + "branch"];
                 }
                 textBoxOnloadValue();
                 formDetailsSetEnable(false);
-                txtSSSD.Text = Global.forEE(Convert.ToDouble(lblBasicSalaryContent.Text)).ToString();
-                txtPagIbigD.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(lblBasicSalaryContent.Text, "PAGIBIG");
-                txtPHD.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(lblBasicSalaryContent.Text, "PHILHEALTH");
-                txtProviFund.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(lblBasicSalaryContent.Text, "PROVIFUND");
+                txtSSSD.Text = Global.forEE(realBasicSalary).ToString();
+                txtPagIbigD.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(realBasicSalary.ToString(), "PAGIBIG");
+                txtPHD.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(realBasicSalary.ToString(), "PHILHEALTH");
+                txtProviFund.Text = forGeneratePayroll.forGeneratePayrollDAO.getComputedDeduction(realBasicSalary.ToString(), "PROVIFUND");
             }
             else
             {
                 formDetailsSetEnable(false);
                 dateTimePickerSetEnable(false);
                 lblBasicSalaryContent.Text = "######";
+                lblRealBasicSalaryContent.Text = "######";
+                realBasicSalary = 0.00;
                 lblPositionContent.Text = "######";
                 lblBranchContent.Text = "######";
                 textBoxOnloadValue();
@@ -284,8 +292,8 @@ namespace GatebankPayroll
             all_onLeave();
             lblAdditionals.Text = computeAdditional().ToString();
             lblDeductions.Text = computeDeduction().ToString();
-            lblGrossSalary.Text = (Convert.ToDouble(lblBasicSalaryContent.Text) + Convert.ToDouble(lblAdditionals.Text)).ToString();
-            lblTakeHomePay.Text = (Convert.ToDouble(lblGrossSalary.Text) - Convert.ToDouble(lblDeductions.Text)).ToString();
+            lblGrossSalary.Text = Math.Round((Convert.ToDouble(lblBasicSalaryContent.Text) + Convert.ToDouble(lblAdditionals.Text)),2).ToString();
+            lblTakeHomePay.Text = Math.Round((Convert.ToDouble(lblGrossSalary.Text) - Convert.ToDouble(lblDeductions.Text)),2).ToString();
             enableGenerateButton();
         }
 
