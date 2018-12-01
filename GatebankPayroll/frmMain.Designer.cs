@@ -43,6 +43,7 @@
             this.parametersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browseParollUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPayrollMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.TimeSheetMS = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.msMain.SuspendLayout();
@@ -55,9 +56,9 @@
             this.ssFullname,
             this.ssAccessLevel,
             this.ssDateTime});
-            this.statusStrip1.Location = new System.Drawing.Point(234, 517);
+            this.statusStrip1.Location = new System.Drawing.Point(234, 653);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(688, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(726, 24);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -116,10 +117,11 @@
             this.payrollMS,
             this.payrollMaintenanceMS,
             this.showPayrollMS,
+            this.TimeSheetMS,
             this.lOGOUTToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(234, 541);
+            this.msMain.Size = new System.Drawing.Size(234, 677);
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
             // 
@@ -196,6 +198,18 @@
             this.showPayrollMS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.showPayrollMS.Click += new System.EventHandler(this.showPayrollMS_Click);
             // 
+            // TimeSheetMS
+            // 
+            this.TimeSheetMS.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold);
+            this.TimeSheetMS.Image = global::GatebankPayroll.Properties.Resources.iconfinder_10_171505;
+            this.TimeSheetMS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.TimeSheetMS.Name = "TimeSheetMS";
+            this.TimeSheetMS.Padding = new System.Windows.Forms.Padding(10, 20, 10, 20);
+            this.TimeSheetMS.Size = new System.Drawing.Size(221, 117);
+            this.TimeSheetMS.Text = "Show Time Sheet";
+            this.TimeSheetMS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.TimeSheetMS.Click += new System.EventHandler(this.TimeSheetMS_Click);
+            // 
             // lOGOUTToolStripMenuItem
             // 
             this.lOGOUTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,7 +228,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::GatebankPayroll.Properties.Resources.Picture11;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(922, 541);
+            this.ClientSize = new System.Drawing.Size(960, 677);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.msMain);
             this.DoubleBuffered = true;
@@ -252,5 +266,6 @@
         private System.Windows.Forms.ToolStripMenuItem parametersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem browseParollUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showPayrollMS;
+        private System.Windows.Forms.ToolStripMenuItem TimeSheetMS;
     }
 }

@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arraylist.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Cryptography.cs" />
     <Compile Include="dataSetPayrollDetails.Designer.cs">
@@ -65,6 +64,7 @@
     <Compile Include="forBrowseUser\ForBrowseUserVO.cs" />
     <Compile Include="forGeneratePayroll\forGeneratePayrollDAO.cs" />
     <Compile Include="forGeneratePayroll\forGeneratePayrollVO.cs" />
+    <Compile Include="forGenerateTimeSheet\ForGenerateTimeSheetDAO.cs" />
     <Compile Include="forLogin\ForLoginVO.cs" />
     <Compile Include="forLogin\LoginDAO.cs" />
     <Compile Include="forParameters\ForParametersDAO.cs" />
@@ -106,6 +106,12 @@
     <Compile Include="frmEditUser.Designer.cs">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmployeeTimeSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeTimeSheet.Designer.cs">
+      <DependentUpon>frmEmployeeTimeSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGeneratePayroll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     <Compile Include="frmShowPayrollList.Designer.cs">
       <DependentUpon>frmShowPayrollList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTimeSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimeSheet.Designer.cs">
+      <DependentUpon>frmTimeSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +181,9 @@
     <EmbeddedResource Include="frmEditUser.resx">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeTimeSheet.resx">
+      <DependentUpon>frmEmployeeTimeSheet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGeneratePayroll.resx">
       <DependentUpon>frmGeneratePayroll.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowPayrollList.resx">
       <DependentUpon>frmShowPayrollList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimeSheet.resx">
+      <DependentUpon>frmTimeSheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -245,6 +263,7 @@
     <Content Include="Resources\Connection.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\iconfinder_10_171505.png" />
     <None Include="Resources\iconfinder_list-unordered_298815.png" />
     <None Include="Resources\if_maintenance-repair-service-Gear_3853928.png" />
     <None Include="Resources\if_icons_exit2_1564506.png" />

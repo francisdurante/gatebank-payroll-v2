@@ -31,12 +31,14 @@ namespace GatebankPayroll
                 payrollMS.Visible = true;
                 payrollMaintenanceMS.Visible = true;
                 showPayrollMS.Visible = false;
+                TimeSheetMS.Visible = false;
             }
             else
             {
                 payrollMS.Visible = false;
                 payrollMaintenanceMS.Visible = false;
                 showPayrollMS.Visible = true;
+                TimeSheetMS.Visible = true;
             }
             ssUserID.Text = "Logged User ID : " + forLogin.ForLoginVO.getUserID();
             ssFullname.Text = "Name : " + forLogin.ForLoginVO.getUserFullName();
@@ -142,6 +144,21 @@ namespace GatebankPayroll
             else
             {
                 MessageBox.Show("Payroll List Form is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TimeSheetMS_Click(object sender, EventArgs e)
+        {
+            Form f = Application.OpenForms["frmEmployeeTimeSheet"];
+            if (f == null)
+            {
+                frmEmployeeTimeSheet fgp = new frmEmployeeTimeSheet();
+                fgp.MdiParent = this;
+                fgp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Time Sheet Form is Already Opened", "Main Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -96,6 +96,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbPayrollSummary = new System.Windows.Forms.GroupBox();
+            this.lblRealBasicSalary = new System.Windows.Forms.Label();
+            this.lblRealBasicSalaryContent = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -109,8 +111,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblAdditionals = new System.Windows.Forms.Label();
             this.btnCompute = new System.Windows.Forms.Button();
-            this.lblRealBasicSalary = new System.Windows.Forms.Label();
-            this.lblRealBasicSalaryContent = new System.Windows.Forms.Label();
+            this.btnGenerateTimeSheet = new System.Windows.Forms.Button();
             this.gbDeductions.SuspendLayout();
             this.gbComanyDeduction.SuspendLayout();
             this.gbLoanDeductions.SuspendLayout();
@@ -700,7 +701,8 @@
             // 
             // dtpTo
             // 
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.CustomFormat = "MM/dd/yyyy";
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTo.Location = new System.Drawing.Point(274, 45);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(112, 23);
@@ -719,7 +721,8 @@
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.CustomFormat = "MM/dd/yyyy";
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFrom.Location = new System.Drawing.Point(123, 45);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(112, 23);
@@ -779,7 +782,7 @@
             // btnGenerate
             // 
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Location = new System.Drawing.Point(744, 447);
+            this.btnGenerate.Location = new System.Drawing.Point(736, 447);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(118, 86);
             this.btnGenerate.TabIndex = 28;
@@ -802,9 +805,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GatebankPayroll.Properties.Resources.Picture11;
-            this.pictureBox1.Location = new System.Drawing.Point(746, 542);
+            this.pictureBox1.Location = new System.Drawing.Point(746, 624);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(265, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
@@ -835,6 +838,24 @@
             this.gbPayrollSummary.TabIndex = 32;
             this.gbPayrollSummary.TabStop = false;
             this.gbPayrollSummary.Text = "PAYROLL SUMMARY";
+            // 
+            // lblRealBasicSalary
+            // 
+            this.lblRealBasicSalary.AutoSize = true;
+            this.lblRealBasicSalary.Location = new System.Drawing.Point(8, 45);
+            this.lblRealBasicSalary.Name = "lblRealBasicSalary";
+            this.lblRealBasicSalary.Size = new System.Drawing.Size(108, 15);
+            this.lblRealBasicSalary.TabIndex = 37;
+            this.lblRealBasicSalary.Text = "BASIC SALARY : ";
+            // 
+            // lblRealBasicSalaryContent
+            // 
+            this.lblRealBasicSalaryContent.AutoSize = true;
+            this.lblRealBasicSalaryContent.Location = new System.Drawing.Point(193, 45);
+            this.lblRealBasicSalaryContent.Name = "lblRealBasicSalaryContent";
+            this.lblRealBasicSalaryContent.Size = new System.Drawing.Size(55, 15);
+            this.lblRealBasicSalaryContent.TabIndex = 38;
+            this.lblRealBasicSalaryContent.Text = "######";
             // 
             // label12
             // 
@@ -958,23 +979,16 @@
             this.btnCompute.UseVisualStyleBackColor = true;
             this.btnCompute.Click += new System.EventHandler(this.btnCompute_Click);
             // 
-            // lblRealBasicSalary
+            // btnGenerateTimeSheet
             // 
-            this.lblRealBasicSalary.AutoSize = true;
-            this.lblRealBasicSalary.Location = new System.Drawing.Point(8, 45);
-            this.lblRealBasicSalary.Name = "lblRealBasicSalary";
-            this.lblRealBasicSalary.Size = new System.Drawing.Size(108, 15);
-            this.lblRealBasicSalary.TabIndex = 37;
-            this.lblRealBasicSalary.Text = "BASIC SALARY : ";
-            // 
-            // lblRealBasicSalaryContent
-            // 
-            this.lblRealBasicSalaryContent.AutoSize = true;
-            this.lblRealBasicSalaryContent.Location = new System.Drawing.Point(193, 45);
-            this.lblRealBasicSalaryContent.Name = "lblRealBasicSalaryContent";
-            this.lblRealBasicSalaryContent.Size = new System.Drawing.Size(55, 15);
-            this.lblRealBasicSalaryContent.TabIndex = 38;
-            this.lblRealBasicSalaryContent.Text = "######";
+            this.btnGenerateTimeSheet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateTimeSheet.Location = new System.Drawing.Point(736, 548);
+            this.btnGenerateTimeSheet.Name = "btnGenerateTimeSheet";
+            this.btnGenerateTimeSheet.Size = new System.Drawing.Size(275, 38);
+            this.btnGenerateTimeSheet.TabIndex = 33;
+            this.btnGenerateTimeSheet.Text = "Generate Time Sheet";
+            this.btnGenerateTimeSheet.UseVisualStyleBackColor = true;
+            this.btnGenerateTimeSheet.Click += new System.EventHandler(this.btnGenerateTimeSheet_Click);
             // 
             // frmGeneratePayroll
             // 
@@ -983,6 +997,7 @@
             this.BackgroundImage = global::GatebankPayroll.Properties.Resources.thumb16;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1023, 707);
+            this.Controls.Add(this.btnGenerateTimeSheet);
             this.Controls.Add(this.btnCompute);
             this.Controls.Add(this.gbPayrollSummary);
             this.Controls.Add(this.pictureBox1);
@@ -1105,5 +1120,6 @@
         private System.Windows.Forms.Button btnCompute;
         private System.Windows.Forms.Label lblRealBasicSalary;
         private System.Windows.Forms.Label lblRealBasicSalaryContent;
+        private System.Windows.Forms.Button btnGenerateTimeSheet;
     }
 }

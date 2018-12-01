@@ -83,6 +83,16 @@ namespace GatebankPayroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_10_171505 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_10_171505", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_list_unordered_298815 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_list-unordered_298815", resourceCulture);

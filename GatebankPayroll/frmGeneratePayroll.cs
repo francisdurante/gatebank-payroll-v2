@@ -251,6 +251,7 @@ namespace GatebankPayroll
             gbLoanDeductions.Enabled = args;
             gbRemarks.Enabled = args;
             btnCompute.Enabled = args;
+            btnGenerateTimeSheet.Enabled = args;
         }
         private void dateTimePickerSetEnable(bool args)
         {
@@ -262,6 +263,8 @@ namespace GatebankPayroll
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
+                SendKeys.Send("\t");
+                double totalDays = (Convert.ToDateTime(dtpTo.Text) - Convert.ToDateTime(dtpFrom.Text)).TotalDays;
                 if (!forGeneratePayroll.forGeneratePayrollDAO.payrollExstingByDate(cnEmployeeName.Text, dtpFrom.Text, dtpTo.Text))
                 {
                     MessageBox.Show("Employee Already Have on Selected Date", "Generate Payroll", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -269,7 +272,19 @@ namespace GatebankPayroll
                 }
                 else
                 {
-                    formDetailsSetEnable(true);
+                    
+                    if (totalDays == 6)
+                    {
+                        formDetailsSetEnable(true);
+                        dtpFrom.Enabled = false;
+                        dtpTo.Enabled = false;
+                        cnEmployeeName.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("This payroll system support maximum of 7days to generate", "Generate Payroll", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        formDetailsSetEnable(false);
+                    }
                 }
             }
         }
@@ -352,6 +367,18 @@ namespace GatebankPayroll
                 deducTotal = Convert.ToDouble(t.Text) + deducTotal;
             }
             return deducTotal;
+        }
+
+        private void btnGenerateTimeSheet_Click(object sender, EventArgs e)
+        {
+            forGeneratePayroll.forGeneratePayrollVO.setDateFrom(dtpFrom.Text);
+            forGeneratePayroll.forGeneratePayrollVO.setDateTo(dtpTo.Text);
+            forGeneratePayroll.forGeneratePayrollVO.setEmployeeName(cnEmployeeName.Text);
+            forGeneratePayroll.forGeneratePayrollVO.setEmployeeID(employeeNames[cnEmployeeName.Text + "employeeID"]);
+
+            frmTimeSheet fts = new frmTimeSheet();
+            fts.MdiParent = this.MdiParent;
+            fts.Show();
         }
     }
 }

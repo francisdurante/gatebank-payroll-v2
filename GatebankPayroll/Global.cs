@@ -98,6 +98,7 @@ namespace GatebankPayroll
                         response.Add(getEmployeeReader.GetValue(1).ToString()+"salary", getEmployeeReader.GetValue(4).ToString());
                         response.Add(getEmployeeReader.GetValue(1).ToString()+"position", getEmployeeReader.GetValue(8).ToString());
                         response.Add(getEmployeeReader.GetValue(1).ToString()+"branch", getEmployeeReader.GetValue(11).ToString());
+                        response.Add(getEmployeeReader.GetValue(1).ToString() + "employeeID", getEmployeeReader.GetValue(0).ToString());
                         x++;
                     }
                 }
