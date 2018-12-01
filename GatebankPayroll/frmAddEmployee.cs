@@ -97,20 +97,40 @@ namespace GatebankPayroll
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string fullname = txtFirstName.Text + " " + txtLastName.Text;
-            if(forAddEmployee.forAddEmployeeDAO.insertEmployee(fullname, Convert.ToDouble(txtBasicSalary.Text), cbPosition.Text, Convert.ToDateTime(dtpDateHired.Text), cbBranch.Text,txtLoginID.Text))
+            if (validations())
             {
-                MessageBox.Show("Password of employee for payroll account is same as their user login id", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Employee Already Exist", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string fullname = txtFirstName.Text + " " + txtLastName.Text;
+                if (forAddEmployee.forAddEmployeeDAO.insertEmployee(fullname, Convert.ToDouble(txtBasicSalary.Text), cbPosition.Text, Convert.ToDateTime(dtpDateHired.Text), cbBranch.Text, txtLoginID.Text))
+                {
+                    MessageBox.Show("Password of employee for payroll account is same as their user login id", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearTextBox();
+                }
             }
         }
         /// <summary>
         /// methods
         /// </summary>
+
+        private void clearTextBox()
+        {
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtBasicSalary.Clear();
+            txtLoginID.Clear();
+        }
+        private bool validations()
+        {
+            bool response = false;
+            if (txtFirstName.Text == "" || txtFirstName.Text == "" || txtLoginID.Text == "" || txtBasicSalary.Text == "")
+            {
+                MessageBox.Show("Please fill up all information needed.", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                response = true;
+            }
+            return response;
+        }
 
         private bool branchExisting()
         {

@@ -33,3 +33,4 @@ C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Debu
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Debug\GatebankPayroll.frmEditEmployee.resources

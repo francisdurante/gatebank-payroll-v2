@@ -32,3 +32,4 @@ C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Rele
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.frmShowPayrollList.resources
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\RdlCompile.cache
 C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\RdlCompile.compiled
+C:\Users\Francis\Desktop\project.exe\C#\GatebankPayroll\GatebankPayroll\obj\Release\GatebankPayroll.frmEditEmployee.resources

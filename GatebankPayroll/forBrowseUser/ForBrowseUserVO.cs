@@ -13,6 +13,7 @@ namespace GatebankPayroll.forBrowseUser
         private static string fullName;
         private static string accessLevel;
         private static string status;
+        private static string employeeID;
 
         public static void setID(string id) { Id = id; }
         public static string getID() { return Id; }
@@ -24,5 +25,7 @@ namespace GatebankPayroll.forBrowseUser
         public static string getAccessLevel() { return accessLevel; }
         public static void setStatus(string value) { status = value; }
         public static string getStatus() { return status; }
+        public static void setEmployeeID(string value) { employeeID = value; }
+        public static string getEmployeeID() { return employeeID; }
     }
 }

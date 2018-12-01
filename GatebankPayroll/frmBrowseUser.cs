@@ -26,7 +26,7 @@ namespace GatebankPayroll
         {
             lvUserList.Items.Clear();
             string[,] data = forBrowseUser.ForBrowseUserDAO.getUsers(name);
-            for (int x = 0; x < data.Length / 5; x++)
+            for (int x = 0; x < data.Length / 6; x++)
             {
                 int i = 0;
                 ListViewItem lv = new ListViewItem(data[x, i]);
@@ -34,6 +34,7 @@ namespace GatebankPayroll
                 lv.SubItems.Add(data[x, ++i]);
                 lv.SubItems.Add(data[x, ++i]);
                 lv.SubItems.Add(data[x, ++i] == "1" ? "ACTIVE" : data[x, ++i] == "0" ?"INACTIVE" : "");
+                lv.SubItems.Add(data[x, ++i]);
                 lvUserList.Items.Add(lv);
             }
         }
@@ -53,10 +54,20 @@ namespace GatebankPayroll
                 forBrowseUser.ForBrowseUserVO.setfullName(items[0].SubItems[2].Text);
                 forBrowseUser.ForBrowseUserVO.setAccessLevel(items[0].SubItems[3].Text);
                 forBrowseUser.ForBrowseUserVO.setStatus(items[0].SubItems[4].Text);
+                forBrowseUser.ForBrowseUserVO.setEmployeeID(items[0].SubItems[5].Text);
 
-                frmEditUser fbu = new frmEditUser();
-                fbu.MdiParent = this.MdiParent;
-                fbu.Show();
+                if (forBrowseUser.ForBrowseUserVO.getAccessLevel() == "Payroll Admin")
+                {
+                    frmEditUser fbu = new frmEditUser();
+                    fbu.MdiParent = this.MdiParent;
+                    fbu.Show();
+                }
+                else
+                {
+                    frmEditEmployee fee = new frmEditEmployee();
+                    fee.MdiParent = this.MdiParent;
+                    fee.Show();
+                }
             }
             Close();
         }

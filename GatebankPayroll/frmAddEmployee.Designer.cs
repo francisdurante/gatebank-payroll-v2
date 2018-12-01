@@ -66,7 +66,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(137, 29);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(270, 20);
-            this.txtFirstName.TabIndex = 17;
+            this.txtFirstName.TabIndex = 1;
             // 
             // lblEmployeeFirstName
             // 
@@ -86,7 +86,7 @@
             this.txtLastName.Location = new System.Drawing.Point(137, 55);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(270, 20);
-            this.txtLastName.TabIndex = 19;
+            this.txtLastName.TabIndex = 2;
             // 
             // lblLastName
             // 
@@ -106,7 +106,7 @@
             this.txtBasicSalary.Location = new System.Drawing.Point(137, 81);
             this.txtBasicSalary.Name = "txtBasicSalary";
             this.txtBasicSalary.Size = new System.Drawing.Size(270, 20);
-            this.txtBasicSalary.TabIndex = 21;
+            this.txtBasicSalary.TabIndex = 3;
             this.txtBasicSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.all_keypress);
             this.txtBasicSalary.Leave += new System.EventHandler(this.txtBasicSalary_Leave);
             // 
@@ -144,7 +144,7 @@
             this.cbPosition.Location = new System.Drawing.Point(137, 110);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(270, 21);
-            this.cbPosition.TabIndex = 23;
+            this.cbPosition.TabIndex = 4;
             this.cbPosition.Leave += new System.EventHandler(this.cbPosition_Leave);
             // 
             // lblDateHired
@@ -166,7 +166,7 @@
             this.dtpDateHired.Location = new System.Drawing.Point(137, 138);
             this.dtpDateHired.Name = "dtpDateHired";
             this.dtpDateHired.Size = new System.Drawing.Size(270, 20);
-            this.dtpDateHired.TabIndex = 25;
+            this.dtpDateHired.TabIndex = 5;
             // 
             // btnSave
             // 
@@ -175,7 +175,7 @@
             this.btnSave.Location = new System.Drawing.Point(10, 226);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(133, 50);
-            this.btnSave.TabIndex = 26;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -187,7 +187,7 @@
             this.btnCancel.Location = new System.Drawing.Point(149, 226);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(133, 50);
-            this.btnCancel.TabIndex = 27;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -202,7 +202,7 @@
             this.cbBranch.Location = new System.Drawing.Point(137, 164);
             this.cbBranch.Name = "cbBranch";
             this.cbBranch.Size = new System.Drawing.Size(270, 21);
-            this.cbBranch.TabIndex = 29;
+            this.cbBranch.TabIndex = 6;
             this.cbBranch.Leave += new System.EventHandler(this.cbBranch_Leave);
             // 
             // lblBranch
@@ -223,7 +223,7 @@
             this.txtLoginID.MaxLength = 4;
             this.txtLoginID.Name = "txtLoginID";
             this.txtLoginID.Size = new System.Drawing.Size(270, 20);
-            this.txtLoginID.TabIndex = 30;
+            this.txtLoginID.TabIndex = 7;
             // 
             // lblLoginID
             // 
